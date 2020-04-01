@@ -3,6 +3,11 @@ import logo from '../../assets/logo.svg';
 import './Form.css';
 import General from '../../components/Forms/General';
 import RentalTerm from '../../components/Forms/RentalTerm';
+import Subleaser1 from '../../components/Forms/Subleaser1';
+import Subleaser2 from '../../components/Forms/Subleaser2';
+import Subleaser3 from '../../components/Forms/Subleaser3';
+import Subleaser4 from '../../components/Forms/Subleaser4';
+import Subleaser5 from '../../components/Forms/Subleaser5';
 
 
 class SubleaserForm extends React.Component {
@@ -33,6 +38,13 @@ class SubleaserForm extends React.Component {
             <div>
                 <General currentStep={this.state.currentStep} action={this.updateStep}></General>
                 <RentalTerm currentStep={this.state.currentStep} action={this.updateStep}></RentalTerm>
+
+                <Subleaser1 currentStep={this.state.currentStep} action={this.updateStep}></Subleaser1>
+                <Subleaser2 currentStep={this.state.currentStep} action={this.updateStep}></Subleaser2>
+                <Subleaser3 currentStep={this.state.currentStep} action={this.updateStep}></Subleaser3>
+                <Subleaser4 currentStep={this.state.currentStep} action={this.updateStep}></Subleaser4>
+                <Subleaser5 currentStep={this.state.currentStep} action={this.updateStep}></Subleaser5>
+
             </div>
         )
     };

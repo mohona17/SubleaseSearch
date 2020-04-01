@@ -17,8 +17,8 @@ const App = () => {
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>
-        <Route exact path="/SubtenantForm" component={SubtenantForm} />    
-        <Route exact path="/SubleaserForm" component={SubleaserForm} />
+        <Route exact path="/Subtenant" component={SubtenantForm} />    
+        <Route exact path="/Subleaser" component={SubleaserForm} />
         <Route exact path="/Listings" component={Listings} />
         <Route exact path="/Messages" component={Messages} />
         <Route component={NotFound}/>

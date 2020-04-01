@@ -11,10 +11,10 @@ function Home() {
                 <p>
                     I am looking to...
                 </p>
-                <a href="/SubleaserForm">
+                <a href="/Subleaser">
                     Rent out my apartment
                 </a>
-                <a href="/SubtenantForm">
+                <a href="/Subtenant">
                     Find a temporary apartment
                 </a>
 

@@ -1,12 +1,24 @@
 import React from 'react';
 import './Listings.css';
 
-function Listings() {
-    return (
-        <div className="App">
-            <p>Listings go here</p>
-        </div>
-    );
+class Listings extends React.Component {
+    constructor(props) {
+        super(props);
+
+    }
+
+    render() {
+        if (this.props.currentStep !== 6) {
+            return null
+        }
+
+        
+        return (
+            <div>
+                Listings go here
+            </div>
+        )
+    };
 }
 
 export default Listings;

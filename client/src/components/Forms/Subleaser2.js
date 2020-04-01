@@ -2,21 +2,35 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Forms.css';
 
-class Subtenant2 extends React.Component {
+class Subleaser2 extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            furnished: false,
             utilities: false,
             pets: false,
             roommates: Number,
         };
 
+        this.onTextboxChangeFurnished = this.onTextboxChangeFurnished.bind(this);
         this.onTextboxChangeUtilities = this.onTextboxChangeUtilities.bind(this);
         this.onTextboxChangePets = this.onTextboxChangePets.bind(this);
         this.onTextboxChangeRoommates = this.onTextboxChangeRoommates.bind(this);
     }
 
+    onTextboxChangeFurnished(event) {
+        if (this.state.genderFemale == true) {
+            this.setState({
+                genderFemale: false,
+            });
+        }
+        else {
+            this.setState({
+                genderFemale: true,
+            });
+        }
+    }
     onTextboxChangeUtilities(event) {
         if (this.state.utilities == true) {
             this.setState({
@@ -53,20 +67,21 @@ class Subtenant2 extends React.Component {
         }
 
         const {
+            furnished,
             utilities,
             pets,
             roommates,
         } = this.state;
         return (
             <div>
-                <h2>Refine your results!</h2>
+                <h2>Add more information!</h2>
                 <hr></hr>
                 <input
                     type="checkbox"
-                    value={utilities}
-                    onChange={this.onTextboxChangeUtilities}
+                    value={furnished}
+                    onChange={this.onTextboxChangeFurnished}
                 ></input>
-                <h4>utilities included</h4>
+                <h4>furnished</h4>
                 <br />
                 <input
                     type="checkbox"
@@ -84,6 +99,12 @@ class Subtenant2 extends React.Component {
                     value={roommates}
                     onChange={this.onTextboxChangeRoommates}
                 ></input><br />
+                <input
+                    type="checkbox"
+                    value={utilities}
+                    onChange={this.onTextboxChangeUtilities}
+                ></input>
+                <h4>utilities included</h4>
 
                 <button onClick={this.props.action}> Next </button>
 
@@ -92,4 +113,4 @@ class Subtenant2 extends React.Component {
     };
 }
 
-export default Subtenant2;
+export default Subleaser2;
