@@ -6,17 +6,18 @@ function Home() {
     return (
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
+                <h2>Welcome to ...</h2>
+                <h1>SUBLIST</h1>
                 <p>
-                    Edit <code>src/App.js</code> and save to reload.
+                    I am looking to...
                 </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <a href="/form">
+                    Rent out my apartment
                 </a>
+                <a href="/form">
+                    Find a temporary apartment
+                </a>
+
             </header>
         </div>
     );

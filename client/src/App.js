@@ -3,17 +3,24 @@ import { Route, Switch, Redirect  } from 'react-router-dom';
 import Home from "./views/Home/Home"
 import NotFound from "./views/NotFound"
 import Header from "./components/Header/Header"
+import SubtenantForm from "./views/Form/SubtenantForm"
+import SubleaserForm from "./views/Form/SubleaserForm"
+import Listings from "./views/Listings/Listings"
+import Messages from "./views/Messages/Messages"
 
 
 const App = () => {
   return (
     <div>
-      <Header />
       <Switch>
         <Route exact path="/Home" component={Home} />
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>
+        <Route exact path="/SubtenantForm" component={SubtenantForm} />    
+        <Route exact path="/SubleaserForm" component={SubleaserForm} />
+        <Route exact path="/Listings" component={Listings} />
+        <Route exact path="/Messages" component={Messages} />
         <Route component={NotFound}/>
       </Switch>
     </div>
