@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../assets/logo.svg';
 import './Form.css';
 
-function Form() {
+function SubtenantForm() {
     return (
         <div className="App">
             <p>put component here</p>
@@ -10,4 +10,4 @@ function Form() {
     );
 }
 
-export default Form;
+export default SubtenantForm;
