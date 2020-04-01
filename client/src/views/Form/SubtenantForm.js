@@ -3,6 +3,10 @@ import logo from '../../assets/logo.svg';
 import './Form.css';
 import General from '../../components/Forms/General';
 import RentalTerm from '../../components/Forms/RentalTerm';
+import Subtenant1 from '../../components/Forms/Subtenant1';
+import Subtenant2 from '../../components/Forms/Subtenant2';
+import Subtenant3 from '../../components/Forms/Subtenant3';
+
 
 
 class SubtenantForm extends React.Component {
@@ -33,6 +37,10 @@ class SubtenantForm extends React.Component {
             <div>
                 <General currentStep={this.state.currentStep} action={this.updateStep}></General>
                 <RentalTerm currentStep={this.state.currentStep} action={this.updateStep}></RentalTerm>
+                <Subtenant1 currentStep={this.state.currentStep} action={this.updateStep}></Subtenant1>
+                <Subtenant2 currentStep={this.state.currentStep} action={this.updateStep}></Subtenant2>
+                <Subtenant3 currentStep={this.state.currentStep} action={this.updateStep}></Subtenant3>
+
             </div>
         )
     };
