@@ -21,7 +21,7 @@ class SubtenantForm extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ step: 1 })
+        this.setState({ currentStep: 1 })
     }
 
     // This method will be sent to the child component

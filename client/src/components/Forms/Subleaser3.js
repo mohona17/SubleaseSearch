@@ -101,7 +101,7 @@ class Subleaser3 extends React.Component {
                         onChange={this.onTextboxChangeGenderMale}
                     ></input>
                     <br />
-
+                    <hr></hr>
                     <input
                         type="checkbox"
                         value={edu}
@@ -122,7 +122,7 @@ class Subleaser3 extends React.Component {
                 ></input>
                 {preferenceForm}
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.props.next}> Next </button>Í
+                <button onClick={this.props.next}> Next </button>
 
             </div >
         )
