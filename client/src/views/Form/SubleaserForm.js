@@ -9,6 +9,7 @@ import Subleaser2 from '../../components/Forms/Subleaser2';
 import Subleaser3 from '../../components/Forms/Subleaser3';
 import Subleaser4 from '../../components/Forms/Subleaser4';
 import Subleaser5 from '../../components/Forms/Subleaser5';
+import MyListings from '../Listings/MyListings';
 
 
 class SubleaserForm extends React.Component {
@@ -52,6 +53,7 @@ class SubleaserForm extends React.Component {
                 <Subleaser3 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></Subleaser3>
                 <Subleaser4 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></Subleaser4>
                 <Subleaser5 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></Subleaser5>
+                <MyListings currentStep={this.state.currentStep}></MyListings>
 
             </div>
         )
