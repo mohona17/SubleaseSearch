@@ -121,7 +121,8 @@ class Subleaser3 extends React.Component {
                     onChange={this.onTextboxChangePreferences}
                 ></input>
                 {preferenceForm}
-                <button onClick={this.props.action}> Next </button>
+                <button onClick={this.props.back}> Back </button>
+                <button onClick={this.props.next}> Next </button>Í
 
             </div >
         )

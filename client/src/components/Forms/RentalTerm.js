@@ -51,8 +51,10 @@ class RentalTerm extends React.Component {
                     value={endDate}
                     onChange={this.onTextboxChangeLastName}
                 ></input><br />
-                <button onClick={this.props.action}> Next </button>
-                
+
+                <button onClick={this.props.back}> Back </button>
+                <button onClick={this.props.next}> Next </button>
+
             </div>
         )
     };

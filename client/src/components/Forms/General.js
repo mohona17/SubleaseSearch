@@ -123,8 +123,9 @@ class General extends React.Component {
                     onChange={this.onTextboxChangeConfirmedPassword}
                 ></input><br />
 
-                <button onClick={this.props.action}> Next </button>
-                
+                <button> <a href="/Home"> Back </a> </button>
+                <button onClick={this.props.next}> Next </button>
+
             </div>
         )
     };

@@ -85,7 +85,8 @@ class Subtenant2 extends React.Component {
                     onChange={this.onTextboxChangeRoommates}
                 ></input><br />
 
-                <button onClick={this.props.action}> Next </button>
+                <button onClick={this.props.back}> Back </button>
+                <button onClick={this.props.next}> Next </button>
 
             </div>
         )

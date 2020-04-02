@@ -17,7 +17,8 @@ class Subtenant3 extends React.Component {
         return (
             <div>
                 All done. Click to go to your listings.
-                <button onClick={this.props.action}> Finish </button>
+                <button onClick={this.props.back}> Back </button>
+                <button onClick={this.props.next}> Next </button>
             </div>
         )
     };

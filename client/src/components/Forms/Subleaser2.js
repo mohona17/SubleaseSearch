@@ -106,7 +106,8 @@ class Subleaser2 extends React.Component {
                 ></input>
                 <h4>utilities included</h4>
 
-                <button onClick={this.props.action}> Next </button>
+                <button onClick={this.props.back}> Back </button>
+                <button onClick={this.props.next}> Next </button>
 
             </div>
         )
