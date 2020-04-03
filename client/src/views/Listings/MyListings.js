@@ -8,14 +8,14 @@ class Listings extends React.Component {
     }
 
     render() {
-        if (this.props.currentStep !== 6) {
+        if (this.props.currentStep !== 8) {
             return null
         }
 
         
         return (
             <div>
-                Listings go here
+                My listings go here
             </div>
         )
     };
