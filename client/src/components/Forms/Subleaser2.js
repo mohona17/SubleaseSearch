@@ -20,14 +20,14 @@ class Subleaser2 extends React.Component {
     }
 
     onTextboxChangeFurnished(event) {
-        if (this.state.genderFemale == true) {
+        if (this.state.furnished == true) {
             this.setState({
-                genderFemale: false,
+                furnished: false,
             });
         }
         else {
             this.setState({
-                genderFemale: true,
+                furnished: true,
             });
         }
     }
@@ -61,6 +61,20 @@ class Subleaser2 extends React.Component {
         });
     }
 
+    nextPage = () => {
+        const {
+            furnished,
+            utilities,
+            pets,
+            roommates
+        } = this.state;
+
+
+        if (this.props.currentStep == 4) {
+            this.props.next();
+        }
+    }
+    
     render() {
         if (this.props.currentStep != 4) {
             return null

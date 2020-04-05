@@ -67,7 +67,19 @@ class Subleaser3 extends React.Component {
             });
         }
     }
+    nextPage = () => {
+        const {
+            preferences,
+            genderFemale,
+            genderMale,
+            edu,
+        } = this.state;
 
+
+        if (this.props.currentStep == 5) {
+            this.props.next();
+        }
+    }
     render() {
         if (this.props.currentStep != 5) {
             return null
@@ -122,7 +134,7 @@ class Subleaser3 extends React.Component {
                 ></input>
                 {preferenceForm}
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.props.next}> Next </button>
+                <button onClick={this.nextPage()}> Next </button>
 
             </div >
         )

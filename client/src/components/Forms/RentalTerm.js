@@ -25,6 +25,21 @@ class RentalTerm extends React.Component {
             endDate: event.target.value,
         });
     }
+    nextPage = () => {
+        const {
+            startDate,
+            endDate
+        } = this.state;
+
+        if (this.props.currentStep == 2) {
+            if (startDate == '' || endDate == '') {
+                alert("Some fields were left blank");
+            }
+            else {
+                this.props.next();
+            }
+        }
+    }
 
     render() {
         if (this.props.currentStep != 2) {
@@ -53,7 +68,7 @@ class RentalTerm extends React.Component {
                 ></input><br />
 
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.props.next}> Next </button>
+                <button onClick={this.nextPage()}> Next </button>
 
             </div>
         )

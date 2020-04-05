@@ -47,6 +47,19 @@ class Subtenant2 extends React.Component {
         });
     }
 
+    nextPage = () => {
+        const {
+            utilities,
+            pets,
+            roommates,
+        } = this.state;
+
+
+        if (this.props.currentStep == 4) {
+            this.props.next();
+        }
+    }
+
     render() {
         if (this.props.currentStep != 4) {
             return null
@@ -86,7 +99,7 @@ class Subtenant2 extends React.Component {
                 ></input><br />
 
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.props.next}> Next </button>
+                <button onClick={this.nextPage()}> Next </button>
 
             </div>
         )

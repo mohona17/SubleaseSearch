@@ -83,17 +83,19 @@ class General extends React.Component {
         } = this.state;
 
         //TODO need to validate phone number 
-        
-        // if (firstName == '' || lastName == '' || preferredEmail == '' || phoneNumber == '' || password == '' || passwordConfirmation == '')
-        //     alert("Some fields were left blank");
-        // else if (password != passwordConfirmation)
-        //     alert("Passwords do not match");
-        // else if (!this.validate(preferredEmail))
-        //     alert("Preferred email is not in correct format");
-        // else if (schoolEmail != '' && !this.validate(schoolEmail))
-        //     alert("School email is not in correct format");
-        // else
+
+        if (this.props.currentStep == 1) {
+            // if (firstName == '' || lastName == '' || preferredEmail == '' || phoneNumber == '' || password == '' || passwordConfirmation == '')
+            //     alert("Some fields were left blank");
+            // else if (password != passwordConfirmation)
+            //     alert("Passwords do not match");
+            // else if (!this.validate(preferredEmail))
+            //     alert("Preferred email is not in correct format");
+            // else if (schoolEmail != '' && !this.validate(schoolEmail))
+            //     alert("School email is not in correct format");
+            // else
             this.props.next();
+        }
     }
 
     render() {

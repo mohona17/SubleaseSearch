@@ -39,7 +39,28 @@ class Subleaser1 extends React.Component {
             bath: event.target.value,
         });
     }
+    nextPage = () => {
+        const {
+            rent, 
+            address,
+            beds,
+            bath
+        } = this.state;
 
+
+        if (this.props.currentStep == 3) {
+            // if (firstName == '' || lastName == '' || preferredEmail == '' || phoneNumber == '' || password == '' || passwordConfirmation == '')
+            //     alert("Some fields were left blank");
+            // else if (password != passwordConfirmation)
+            //     alert("Passwords do not match");
+            // else if (!this.validate(preferredEmail))
+            //     alert("Preferred email is not in correct format");
+            // else if (schoolEmail != '' && !this.validate(schoolEmail))
+            //     alert("School email is not in correct format");
+            // else
+            this.props.next();
+        }
+    }
     render() {
         if (this.props.currentStep != 3) {
             return null
@@ -93,7 +114,7 @@ class Subleaser1 extends React.Component {
                 <br />
 
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.props.next}> Next </button>
+                <button onClick={this.nextPage()}> Next </button>
 
             </div>
         )

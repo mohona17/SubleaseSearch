@@ -20,6 +20,17 @@ class Subleaser4 extends React.Component {
 
     }
 
+    nextPage = () => {
+        const {
+            description,
+        } = this.state;
+
+
+        if (this.props.currentStep == 6) {
+            this.props.next();
+        }
+    }
+
     render() {
         if (this.props.currentStep != 6) {
             return null
@@ -41,7 +52,7 @@ class Subleaser4 extends React.Component {
                     onChange={this.onTextboxChangeDescription}
                 ></input>
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.props.next}> Next </button>
+                <button onClick={this.nextPage()}> Next </button>
 
             </div >
         )
