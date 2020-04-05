@@ -27,7 +27,7 @@ class RentalTerm extends React.Component {
     }
 
     render() {
-        if (this.props.currentStep !== 2) {
+        if (this.props.currentStep != 2) {
             return null
         }
 
@@ -43,13 +43,13 @@ class RentalTerm extends React.Component {
                     type="date"
                     placeholder="MM/DD/YYYY"
                     value={startDate}
-                    onChange={this.onTextboxChangeFirstName}
+                    onChange={this.onTextboxChangeStartDate}
                 ></input><br />
                 <input
                     type="date"
                     placeholder="MM/DD/YYYY"
                     value={endDate}
-                    onChange={this.onTextboxChangeLastName}
+                    onChange={this.onTextboxChangeEndDate}
                 ></input><br />
 
                 <button onClick={this.props.back}> Back </button>

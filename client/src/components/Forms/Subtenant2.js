@@ -48,7 +48,7 @@ class Subtenant2 extends React.Component {
     }
 
     render() {
-        if (this.props.currentStep !== 4) {
+        if (this.props.currentStep != 4) {
             return null
         }
 

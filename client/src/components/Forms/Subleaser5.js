@@ -8,7 +8,7 @@ class Subleaser5 extends React.Component {
 
 
     render() {
-        if (this.props.currentStep !== 7) {
+        if (this.props.currentStep != 7) {
             return null
         }
 

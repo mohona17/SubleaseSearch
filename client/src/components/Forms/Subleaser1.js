@@ -41,7 +41,7 @@ class Subleaser1 extends React.Component {
     }
 
     render() {
-        if (this.props.currentStep !== 3) {
+        if (this.props.currentStep != 3) {
             return null
         }
 

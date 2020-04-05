@@ -8,7 +8,7 @@ class Listings extends React.Component {
     }
 
     render() {
-        if (this.props.currentStep !== 8) {
+        if (this.props.currentStep != 8) {
             return null
         }
 

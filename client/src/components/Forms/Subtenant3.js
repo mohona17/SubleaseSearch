@@ -9,7 +9,7 @@ class Subtenant3 extends React.Component {
     }
 
     render() {
-        if (this.props.currentStep !== 5) {
+        if (this.props.currentStep != 5) {
             return null
         }
 

@@ -98,7 +98,7 @@ class General extends React.Component {
 
     render() {
 
-        if (this.props.currentStep !== 1) {
+        if (this.props.currentStep != 1) {
             return null
         }
 
