@@ -25,8 +25,17 @@ class Subleaser4 extends React.Component {
             description,
         } = this.state;
 
+        var errorMessage = [];
 
-            this.props.next();
+        if (description == '')
+            errorMessage = errorMessage.concat("Make sure you write a description");
+
+        console.log(errorMessage)
+        this.setState({
+            error: errorMessage
+        }, () => {
+            if (errorMessage.length == 0) this.props.next();
+        });
     }
 
     render() {
@@ -36,6 +45,7 @@ class Subleaser4 extends React.Component {
 
         const {
             description,
+            error,
         } = this.state;
 
         return (
@@ -46,12 +56,15 @@ class Subleaser4 extends React.Component {
                 <h4>Description</h4>
                 <input
                     type="textbox"
+                    placeholder="Write your description here!"
                     value={description}
                     onChange={this.onTextboxChangeDescription}
                 ></input>
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.nextPage()}> Next </button>
-
+                <button onClick={this.nextPage}> Next </button>
+                <div>
+                    {error}
+                </div>
             </div >
         )
     };

@@ -94,6 +94,7 @@ class Subleaser2 extends React.Component {
             utilities,
             pets,
             roommates,
+            error,
         } = this.state;
         return (
             <div>
@@ -131,7 +132,9 @@ class Subleaser2 extends React.Component {
 
                 <button onClick={this.props.back}> Back </button>
                 <button onClick={this.nextPage}> Next </button>
-
+                <div>
+                    {error}
+                </div>
             </div>
         )
     };

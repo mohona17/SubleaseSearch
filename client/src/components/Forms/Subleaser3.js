@@ -68,15 +68,27 @@ class Subleaser3 extends React.Component {
         }
     }
     nextPage = () => {
-        const {
-            preferences,
-            genderFemale,
-            genderMale,
-            edu,
-        } = this.state;
+        // const {
+        //     preferences,
+        //     genderFemale,
+        //     genderMale,
+        //     edu,
+        // } = this.state;
 
+        // var errorMessage = [];
 
-            this.props.next();
+        // console.log(roommates)
+        // if ()
+        //     errorMessage = errorMessage.concat("Make sure all fields are complete");
+
+        // console.log(errorMessage)
+        // this.setState({
+        //     error: errorMessage
+        // }, () => {
+        //     if (errorMessage.length == 0) this.props.next();
+        // });
+
+        this.props.next();
     }
     render() {
         if (this.props.currentStep != 5) {
@@ -88,6 +100,7 @@ class Subleaser3 extends React.Component {
             genderFemale,
             genderMale,
             edu,
+            error,
         } = this.state;
 
         var preferenceForm = <div></div>;
@@ -132,8 +145,10 @@ class Subleaser3 extends React.Component {
                 ></input>
                 {preferenceForm}
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.nextPage()}> Next </button>
-
+                <button onClick={this.nextPage}> Next </button>
+                <div>
+                    {error}
+                </div>
             </div >
         )
     };
