@@ -7,8 +7,8 @@ class RentalTerm extends React.Component {
         super(props);
 
         this.state = {
-            startDate: Date("2000-01-01"),
-            endDate: Date("2000-01-01"),
+            startDate: "YYYY-MM-DD",
+            endDate: "YYYY-MM-DD",
             error: [],
         }
 
@@ -26,36 +26,26 @@ class RentalTerm extends React.Component {
             endDate: event.target.value,
         });
     }
-    handleError = () => {
+
+
+    nextPage = () => {
         const {
             startDate,
             endDate,
             error
         } = this.state;
 
+        console.log(startDate);
         var errorMessage = [];
-        if (startDate == Date("2000-01-01") || endDate == Date("2000-01-01"))
+        if (startDate == "YYYY-MM-DD" || endDate == "YYYY-MM-DD")
             errorMessage = errorMessage.concat("Some dates were not filled in");
 
+        console.log(errorMessage)
         this.setState({
             error: errorMessage
         }, () => {
-                console.log(error);
-                return;
+            if (errorMessage.length == 0) this.props.next();
         });
-
-    }
-
-    nextPage = () => {
-        const {
-            error,
-        } = this.state;
-
-        this.handleError()
-
-        if (error.length == 0) {
-            this.props.next();
-        }
     }
 
     render() {
@@ -66,6 +56,7 @@ class RentalTerm extends React.Component {
         const {
             startDate,
             endDate,
+            error,
         } = this.state;
         return (
             <div>
@@ -86,7 +77,9 @@ class RentalTerm extends React.Component {
 
                 <button onClick={this.props.back}> Back </button>
                 <button onClick={this.nextPage}> Next </button>
-
+                <div>
+                    {error}
+                </div>
             </div>
         )
     };
