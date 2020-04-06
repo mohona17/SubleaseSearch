@@ -13,7 +13,6 @@ class Subtenant3 extends React.Component {
             return null
         }
 
-        
         return (
             <div>
                 All done. Click to go to your listings.
