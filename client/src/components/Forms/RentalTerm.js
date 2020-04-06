@@ -35,6 +35,8 @@ class RentalTerm extends React.Component {
             error
         } = this.state;
 
+        var errorMessage = [];
+        //TODO check if end date > start date and if both are after today's date
         console.log(startDate);
         var errorMessage = [];
         if (startDate == "YYYY-MM-DD" || endDate == "YYYY-MM-DD")

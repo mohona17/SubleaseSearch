@@ -10,7 +10,7 @@ class Subleaser2 extends React.Component {
             furnished: false,
             utilities: false,
             pets: false,
-            roommates: Number,
+            roommates: null,
         };
 
         this.onTextboxChangeFurnished = this.onTextboxChangeFurnished.bind(this);
@@ -69,7 +69,19 @@ class Subleaser2 extends React.Component {
             roommates
         } = this.state;
 
-            this.props.next();
+
+        var errorMessage = [];
+
+        console.log(roommates)
+        if (roommates == null)
+            errorMessage = errorMessage.concat("Make sure all fields are complete");
+
+        console.log(errorMessage)
+        this.setState({
+            error: errorMessage
+        }, () => {
+            if (errorMessage.length == 0) this.props.next();
+        });
     }
 
     render() {
@@ -118,7 +130,7 @@ class Subleaser2 extends React.Component {
                 <h4>utilities included</h4>
 
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.props.next}> Next </button>
+                <button onClick={this.nextPage}> Next </button>
 
             </div>
         )

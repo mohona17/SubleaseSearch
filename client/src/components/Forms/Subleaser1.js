@@ -40,18 +40,26 @@ class Subleaser1 extends React.Component {
         });
     }
     nextPage = () => {
-        // const {
-        //     rent, 
-        //     address,
-        //     beds,
-        //     bath
-        // } = this.state;
+        const {
+            rent,
+            address,
+            beds,
+            bath,
+            error,
+        } = this.state;
 
+        var errorMessage = [];
 
-        // if (rent == 0 || address == '' || beds == 0 || bath == 0)
-        //     this.props.handleError("Some fields were left blank");
-        // else
-        //     this.props.next();
+        //TODO CHECK ADDRESS
+        if (rent == 0 || address == '' || beds == 0 || bath == 0)
+            errorMessage = errorMessage.concat("Some fields were left blank");
+
+        console.log(errorMessage)
+        this.setState({
+            error: errorMessage
+        }, () => {
+            if (errorMessage.length == 0) this.props.next();
+        });
     }
     render() {
         if (this.props.currentStep != 3) {
@@ -63,6 +71,7 @@ class Subleaser1 extends React.Component {
             address,
             beds,
             bath,
+            error,
         } = this.state;
         return (
             <div>
@@ -78,7 +87,7 @@ class Subleaser1 extends React.Component {
                 <h3>Address:</h3>
                 <input
                     type="address"
-                    placeholder="0"
+                    placeholder="1234 NW 1st Street"
                     value={address}
                     onChange={this.onTextboxChangeAddress}
                 ></input>
@@ -106,7 +115,10 @@ class Subleaser1 extends React.Component {
                 <br />
 
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.nextPage()}> Next </button>
+                <button onClick={this.nextPage}> Next </button>
+                <div>
+                    {error}
+                </div>
 
             </div>
         )
