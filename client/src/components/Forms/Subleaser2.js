@@ -69,12 +69,9 @@ class Subleaser2 extends React.Component {
             roommates
         } = this.state;
 
-
-        if (this.props.currentStep == 4) {
             this.props.next();
-        }
     }
-    
+
     render() {
         if (this.props.currentStep != 4) {
             return null

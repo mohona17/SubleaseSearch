@@ -76,9 +76,7 @@ class Subleaser3 extends React.Component {
         } = this.state;
 
 
-        if (this.props.currentStep == 5) {
             this.props.next();
-        }
     }
     render() {
         if (this.props.currentStep != 5) {

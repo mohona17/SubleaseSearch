@@ -7,10 +7,10 @@ class Subleaser1 extends React.Component {
         super(props);
 
         this.state = {
-            rent: Number,
+            rent: 0,
             address: '',
-            beds: Number,
-            bath: Number,
+            beds: 0,
+            bath: 0,
         };
 
         this.onTextboxChangeRent = this.onTextboxChangeRent.bind(this);
@@ -48,18 +48,10 @@ class Subleaser1 extends React.Component {
         } = this.state;
 
 
-        if (this.props.currentStep == 3) {
-            // if (firstName == '' || lastName == '' || preferredEmail == '' || phoneNumber == '' || password == '' || passwordConfirmation == '')
-            //     alert("Some fields were left blank");
-            // else if (password != passwordConfirmation)
-            //     alert("Passwords do not match");
-            // else if (!this.validate(preferredEmail))
-            //     alert("Preferred email is not in correct format");
-            // else if (schoolEmail != '' && !this.validate(schoolEmail))
-            //     alert("School email is not in correct format");
-            // else
+        if (rent == 0 || address == '' || beds == 0 || bath == 0)
+            this.props.handleError("Some fields were left blank");
+        else
             this.props.next();
-        }
     }
     render() {
         if (this.props.currentStep != 3) {

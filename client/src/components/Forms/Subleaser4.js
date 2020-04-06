@@ -26,9 +26,7 @@ class Subleaser4 extends React.Component {
         } = this.state;
 
 
-        if (this.props.currentStep == 6) {
             this.props.next();
-        }
     }
 
     render() {

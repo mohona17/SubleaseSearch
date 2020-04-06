@@ -7,8 +7,8 @@ class RentalTerm extends React.Component {
         super(props);
 
         this.state = {
-            startDate: '',
-            endDate: '',
+            startDate: Date("2000-01-01"),
+            endDate: Date("2000-01-01"),
         }
 
         this.onTextboxChangeStartDate = this.onTextboxChangeStartDate.bind(this);
@@ -31,14 +31,12 @@ class RentalTerm extends React.Component {
             endDate
         } = this.state;
 
-        if (this.props.currentStep == 2) {
-            if (startDate == '' || endDate == '') {
-                alert("Some fields were left blank");
-            }
-            else {
-                this.props.next();
-            }
-        }
+        console.log(this.state.edited)
+        if (startDate == Date("2000-01-01") || endDate == Date("2000-01-01"))
+            this.props.handleError("Some dates were not filled in");
+
+        else if (startDate != Date("2000-01-01") && endDate != Date("2000-01-01"))
+            this.props.next();
     }
 
     render() {
