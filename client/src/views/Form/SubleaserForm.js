@@ -47,15 +47,6 @@ class SubleaserForm extends React.Component {
         console.log(this.state.currentStep)
         return (
             <div>
-                {/* <General currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} handleError={this.handleError}></General>
-                <RentalTerm currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} handleError={this.handleError}></RentalTerm>
-                <Subleaser1 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} handleError={this.handleError}></Subleaser1>
-                <Subleaser2 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} handleError={this.handleError}></Subleaser2>
-                <Subleaser3 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} handleError={this.handleError}></Subleaser3>
-                <Subleaser4 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} handleError={this.handleError}></Subleaser4>
-                <Subleaser5 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} handleError={this.handleError}></Subleaser5>
-                <MyListings currentStep={this.state.currentStep}></MyListings> */}
-
                 <General currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></General>
                 <RentalTerm currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></RentalTerm>
                 <Subleaser1 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></Subleaser1>
