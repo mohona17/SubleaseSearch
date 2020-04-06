@@ -73,7 +73,7 @@ class General extends React.Component {
         return expression.test(String(email).toLowerCase())
     }
 
-    handleError = () => {
+    nextPage = () => {
         const {
             firstName,
             lastName,
@@ -96,28 +96,17 @@ class General extends React.Component {
             errorMessage = errorMessage.concat("Passwords do not match. ")
         if (!this.validate(preferredEmail))
             // this.props.handleError("Preferred email is not in correct format");
-            errorMessage =  errorMessage.concat("Preferred email is not in correct format. ")
+            errorMessage = errorMessage.concat("Preferred email is not in correct format. ")
         if (schoolEmail != '' && !this.validate(schoolEmail))
             // this.props.handleError("School email is not in correct format");
             errorMessage = errorMessage.concat("School email is not in correct format. ")
 
+        console.log(errorMessage)
         this.setState({
             error: errorMessage
         }, () => {
-                console.log(error);
+            if (errorMessage.length == 0) this.props.next();
         });
-
-    }
-    nextPage = () => {
-        const {
-            error,
-        } = this.state;
-
-        this.handleError()
-
-        if (error.length != 0) {
-            this.props.next();
-        }
     }
 
     render() {

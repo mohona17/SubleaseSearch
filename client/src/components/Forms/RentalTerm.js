@@ -9,6 +9,7 @@ class RentalTerm extends React.Component {
         this.state = {
             startDate: Date("2000-01-01"),
             endDate: Date("2000-01-01"),
+            error: [],
         }
 
         this.onTextboxChangeStartDate = this.onTextboxChangeStartDate.bind(this);
@@ -25,18 +26,36 @@ class RentalTerm extends React.Component {
             endDate: event.target.value,
         });
     }
-    nextPage = () => {
+    handleError = () => {
         const {
             startDate,
-            endDate
+            endDate,
+            error
         } = this.state;
 
-        console.log(this.state.edited)
+        var errorMessage = [];
         if (startDate == Date("2000-01-01") || endDate == Date("2000-01-01"))
-            this.props.handleError("Some dates were not filled in");
+            errorMessage = errorMessage.concat("Some dates were not filled in");
 
-        else if (startDate != Date("2000-01-01") && endDate != Date("2000-01-01"))
+        this.setState({
+            error: errorMessage
+        }, () => {
+                console.log(error);
+                return;
+        });
+
+    }
+
+    nextPage = () => {
+        const {
+            error,
+        } = this.state;
+
+        this.handleError()
+
+        if (error.length == 0) {
             this.props.next();
+        }
     }
 
     render() {
@@ -66,7 +85,7 @@ class RentalTerm extends React.Component {
                 ></input><br />
 
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.nextPage()}> Next </button>
+                <button onClick={this.nextPage}> Next </button>
 
             </div>
         )

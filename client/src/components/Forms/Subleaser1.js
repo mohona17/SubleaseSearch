@@ -40,18 +40,18 @@ class Subleaser1 extends React.Component {
         });
     }
     nextPage = () => {
-        const {
-            rent, 
-            address,
-            beds,
-            bath
-        } = this.state;
+        // const {
+        //     rent, 
+        //     address,
+        //     beds,
+        //     bath
+        // } = this.state;
 
 
-        if (rent == 0 || address == '' || beds == 0 || bath == 0)
-            this.props.handleError("Some fields were left blank");
-        else
-            this.props.next();
+        // if (rent == 0 || address == '' || beds == 0 || bath == 0)
+        //     this.props.handleError("Some fields were left blank");
+        // else
+        //     this.props.next();
     }
     render() {
         if (this.props.currentStep != 3) {

@@ -43,17 +43,6 @@ class SubleaserForm extends React.Component {
         });
     }
 
-    // handleError(newError) {
-    //     let errormsg = this.state.error;
-    //     console.log(errormsg);
-    //     if (!(newError == this.state.error)) {
-    //         alert(newError);
-    //         // this.setState({
-    //         //     error: newError
-    //         // })
-    //     }
-    // }
-
     render() {
         console.log(this.state.currentStep)
         return (
