@@ -92,18 +92,13 @@ class General extends React.Component {
 
         var errorMessage = [];
         console.log("General next")
-        //TODO need to validate phone number 
         if (firstName == '' || lastName == '' || preferredEmail == '' || phoneNumber == '' || password == '' || passwordConfirmation == '')
-            // this.props.handleError("Some fields were left blank");
             errorMessage = errorMessage.concat("Some fields were left blank. ")
         if (password != passwordConfirmation)
-            // this.props.handleError("Passwords do not match");
             errorMessage = errorMessage.concat("Passwords do not match. ")
         if (schoolEmail != '' && !this.validateEmail(preferredEmail))
-            // this.props.handleError("Preferred email is not in correct format");
             errorMessage = errorMessage.concat("Preferred email is not in correct format. ")
         if (schoolEmail != '' && !this.validateEmail(schoolEmail))
-            // this.props.handleError("School email is not in correct format");
             errorMessage = errorMessage.concat("School email is not in correct format. ")
         if (phoneNumber != '' && !this.validatePhoneNumber(phoneNumber))
             errorMessage = errorMessage.concat("Phone number is not in correct format. ")
