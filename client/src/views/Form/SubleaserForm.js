@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect  } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import './Form.css';
 import General from '../../components/Forms/General';
@@ -11,16 +11,17 @@ import Subleaser4 from '../../components/Forms/Subleaser4';
 import Subleaser5 from '../../components/Forms/Subleaser5';
 import MyListings from '../Listings/MyListings';
 
-
 class SubleaserForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             currentStep: 1,
+            error: "None",
         };
 
         this.nextStep = this.nextStep.bind(this);
         this.backStep = this.backStep.bind(this);
+
     }
 
     componentDidMount() {
@@ -43,16 +44,16 @@ class SubleaserForm extends React.Component {
     }
 
     render() {
-
+        console.log(this.state.currentStep)
         return (
             <div>
-                <General currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></General>
-                <RentalTerm currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></RentalTerm>
-                <Subleaser1 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></Subleaser1>
-                <Subleaser2 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></Subleaser2>
-                <Subleaser3 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></Subleaser3>
-                <Subleaser4 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></Subleaser4>
-                <Subleaser5 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></Subleaser5>
+                <General currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></General>
+                <RentalTerm currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></RentalTerm>
+                <Subleaser1 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></Subleaser1>
+                <Subleaser2 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></Subleaser2>
+                <Subleaser3 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></Subleaser3>
+                <Subleaser4 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></Subleaser4>
+                <Subleaser5 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></Subleaser5>
                 <MyListings currentStep={this.state.currentStep}></MyListings>
 
             </div>

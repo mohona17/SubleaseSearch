@@ -4,11 +4,12 @@ import './Forms.css';
 
 class Subleaser5 extends React.Component {
     constructor(props) {
-        super(props); }
+        super(props);
+    }
 
 
     render() {
-        if (this.props.currentStep !== 7) {
+        if (this.props.currentStep != 7) {
             return null
         }
 
@@ -18,7 +19,6 @@ class Subleaser5 extends React.Component {
 
                 <button onClick={this.props.back}> Back </button>
                 <button onClick={this.props.next}> Next </button>
-
             </div >
         )
     };
