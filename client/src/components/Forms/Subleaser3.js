@@ -21,8 +21,12 @@ class Subleaser3 extends React.Component {
 
     onTextboxChangePreferences(event) {
         if (this.state.preferences == true) {
+            //Turning false, must clear other preferences
             this.setState({
                 preferences: false,
+                genderFemale: false,
+                genderMale: false,
+                edu:false,
             });
         }
         else {
@@ -32,11 +36,13 @@ class Subleaser3 extends React.Component {
         }
     }
     onTextboxChangeGenderMale(event) {
+        //uncheck
         if (this.state.genderMale == true) {
             this.setState({
                 genderMale: false,
             });
         }
+        //check
         else {
             this.setState({
                 genderMale: true,
@@ -44,11 +50,13 @@ class Subleaser3 extends React.Component {
         }
     }
     onTextboxChangeGenderFemale(event) {
+        //uncheck
         if (this.state.genderFemale == true) {
             this.setState({
                 genderFemale: false,
             });
         }
+        //check
         else {
             this.setState({
                 genderFemale: true,
@@ -68,27 +76,25 @@ class Subleaser3 extends React.Component {
         }
     }
     nextPage = () => {
-        // const {
-        //     preferences,
-        //     genderFemale,
-        //     genderMale,
-        //     edu,
-        // } = this.state;
+        const {
+            genderFemale,
+            genderMale,
+            edu,
+            preferences
+        } = this.state;
 
-        // var errorMessage = [];
 
-        // console.log(roommates)
-        // if ()
-        //     errorMessage = errorMessage.concat("Make sure all fields are complete");
+        var errorMessage = [];
 
-        // console.log(errorMessage)
-        // this.setState({
-        //     error: errorMessage
-        // }, () => {
-        //     if (errorMessage.length == 0) this.props.next();
-        // });
+        if (genderFemale && genderMale)
+            errorMessage = errorMessage.concat("Make sure to only choose one gender");
 
-        this.props.next();
+        console.log(errorMessage)
+        this.setState({
+            error: errorMessage
+        }, () => {
+            if (errorMessage.length == 0) this.props.next();
+        });
     }
     render() {
         if (this.props.currentStep != 5) {
@@ -109,8 +115,6 @@ class Subleaser3 extends React.Component {
                 <div>
                     <h3>Gender restriction</h3>
                     <br />
-
-                    {/* TODO: Need to restrict to 1 */}
                     <h4>Female</h4>
                     <input
                         type="checkbox"
@@ -137,7 +141,7 @@ class Subleaser3 extends React.Component {
         return (
 
             < div >
-                <h2>Do you have preferences for a subtenant?</h2>
+                <h2>Do you have preferences for a subtenant? Check the box if so</h2>
                 <input
                     type="checkbox"
                     value={preferences}

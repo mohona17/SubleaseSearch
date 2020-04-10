@@ -98,7 +98,7 @@ class Subleaser2 extends React.Component {
         } = this.state;
         return (
             <div>
-                <h2>Add more information!</h2>
+                <h2>Please dd more information</h2>
                 <hr></hr>
                 <input
                     type="checkbox"
