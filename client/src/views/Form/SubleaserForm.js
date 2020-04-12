@@ -54,8 +54,6 @@ class SubleaserForm extends React.Component {
                 <Subleaser3 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></Subleaser3>
                 <Subleaser4 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></Subleaser4>
                 <Subleaser5 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep} ></Subleaser5>
-                <MyListings currentStep={this.state.currentStep}></MyListings>
-
             </div>
         )
     };
