@@ -9,7 +9,8 @@ class Subtenant2 extends React.Component {
         this.state = {
             utilities: false,
             pets: false,
-            roommates: Number,
+            roommates: null,
+            error: [],
         };
 
         this.onTextboxChangeUtilities = this.onTextboxChangeUtilities.bind(this);
@@ -47,8 +48,29 @@ class Subtenant2 extends React.Component {
         });
     }
 
+    nextPage = () => {
+        const {
+            utilities,
+            pets,
+            roommates,
+        } = this.state;
+
+
+        var errorMessage = [];
+
+        if (roommates == null)
+            errorMessage = errorMessage.concat("Make sure to specify number of roommates");
+
+        console.log(errorMessage)
+        this.setState({
+            error: errorMessage
+        }, () => {
+            if (errorMessage.length == 0) this.props.next();
+        });
+    }
+
     render() {
-        if (this.props.currentStep !== 4) {
+        if (this.props.currentStep != 4) {
             return null
         }
 
@@ -56,6 +78,7 @@ class Subtenant2 extends React.Component {
             utilities,
             pets,
             roommates,
+            error,
         } = this.state;
         return (
             <div>
@@ -86,8 +109,11 @@ class Subtenant2 extends React.Component {
                 ></input><br />
 
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.props.next}> Next </button>
+                <button onClick={this.nextPage}> Next </button>
 
+            <div>
+                {error}
+            </div>
             </div>
         )
     };

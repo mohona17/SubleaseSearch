@@ -1,17 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Forms.css';
+import { disconnect } from 'mongoose';
 
 class Subtenant1 extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            budget: Number,
-            milesLow: Number,
-            milesHigh: Number,
-            beds: Number,
-            bath: Number,
+            budget: null,
+            milesLow: null,
+            milesHigh: null,
+            beds: 0,
+            bath: 0,
+            error: [],
         };
 
         this.onTextboxChangeBudget = this.onTextboxChangeBudget.bind(this);
@@ -47,8 +49,35 @@ class Subtenant1 extends React.Component {
         });
     }
 
+    nextPage = () => {
+        const {
+            budget,
+            milesHigh,
+            milesLow,
+            beds,
+            bath
+        } = this.state;
+
+
+        var errorMessage = [];
+
+
+        console.log(budget)
+        if (budget == null || milesHigh == null || milesLow == null || bath == 0 || beds == 0)
+            errorMessage = errorMessage.concat("Some fields were left blank. ");
+        if (milesLow>=milesHigh)
+            errorMessage = errorMessage.concat("Ensure that the range for miles is correct. ");
+
+        console.log(errorMessage)
+        this.setState({
+            error: errorMessage
+        }, () => {
+            if (errorMessage.length == 0) this.props.next();
+        });
+    }
+
     render() {
-        if (this.props.currentStep !== 3) {
+        if (this.props.currentStep != 3) {
             return null
         }
 
@@ -58,6 +87,7 @@ class Subtenant1 extends React.Component {
             milesHigh,
             beds,
             bath,
+            error,
         } = this.state;
         return (
             <div>
@@ -111,7 +141,10 @@ class Subtenant1 extends React.Component {
                 <br />
 
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.props.next}> Next </button>
+                <button onClick={this.nextPage}> Next </button>
+                <div>
+                    {error}
+                </div>
 
             </div>
         )

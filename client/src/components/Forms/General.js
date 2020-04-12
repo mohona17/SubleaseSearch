@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Forms.css';
+import validator from 'validator'
 
 class General extends React.Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class General extends React.Component {
             phoneNumber: '',
             password: '',
             passwordConfirmation: '',
+            error: [],
         };
 
         this.onTextboxChangeFirstName = this.onTextboxChangeFirstName.bind(this);
@@ -26,7 +28,7 @@ class General extends React.Component {
     }
 
     onTextboxChangeFirstName(event) {
-        if (/\d/.test(event.target.value)) alert("First name cannot have number")
+        if (/\d/.test(event.target.value)) this.props.handleError("First name cannot have number")
         else {
             this.setState({
                 firstName: event.target.value,
@@ -34,7 +36,7 @@ class General extends React.Component {
         }
     }
     onTextboxChangeLastName(event) {
-        if (/\d/.test(event.target.value)) alert("Last name cannot have number")
+        if (/\d/.test(event.target.value)) this.props.handleError("Last name cannot have number")
         else {
             this.setState({
                 lastName: event.target.value,
@@ -67,10 +69,15 @@ class General extends React.Component {
             passwordConfirmation: event.target.value,
         });
     }
-    validate(email) {
+    validateEmail(email) {
         const expression = /(?!.*\.{2})^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
         return expression.test(String(email).toLowerCase())
     }
+    validatePhoneNumber = (number) => {
+        const isValidPhoneNumber = validator.isMobilePhone(number)
+        return (isValidPhoneNumber)
+    }
+
     nextPage = () => {
         const {
             firstName,
@@ -79,26 +86,34 @@ class General extends React.Component {
             schoolEmail,
             phoneNumber,
             password,
-            passwordConfirmation
+            passwordConfirmation,
+            error,
         } = this.state;
 
-        //TODO need to validate phone number 
-        
-        // if (firstName == '' || lastName == '' || preferredEmail == '' || phoneNumber == '' || password == '' || passwordConfirmation == '')
-        //     alert("Some fields were left blank");
-        // else if (password != passwordConfirmation)
-        //     alert("Passwords do not match");
-        // else if (!this.validate(preferredEmail))
-        //     alert("Preferred email is not in correct format");
-        // else if (schoolEmail != '' && !this.validate(schoolEmail))
-        //     alert("School email is not in correct format");
-        // else
-            this.props.next();
+        var errorMessage = [];
+        console.log("General next")
+        if (firstName == '' || lastName == '' || preferredEmail == '' || phoneNumber == '' || password == '' || passwordConfirmation == '')
+            errorMessage = errorMessage.concat("Some fields were left blank. ")
+        if (password != passwordConfirmation)
+            errorMessage = errorMessage.concat("Passwords do not match. ")
+        if (schoolEmail != '' && !this.validateEmail(preferredEmail))
+            errorMessage = errorMessage.concat("Preferred email is not in correct format. ")
+        if (schoolEmail != '' && !this.validateEmail(schoolEmail))
+            errorMessage = errorMessage.concat("School email is not in correct format. ")
+        if (phoneNumber != '' && !this.validatePhoneNumber(phoneNumber))
+            errorMessage = errorMessage.concat("Phone number is not in correct format. ")
+
+        console.log(errorMessage)
+        this.setState({
+            error: errorMessage
+        }, () => {
+            if (errorMessage.length == 0) this.props.next();
+        });
     }
 
     render() {
 
-        if (this.props.currentStep !== 1) {
+        if (this.props.currentStep != 1) {
             return null
         }
 
@@ -109,7 +124,8 @@ class General extends React.Component {
             schoolEmail,
             phoneNumber,
             password,
-            passwordConfirmation
+            passwordConfirmation,
+            error
         } = this.state;
         return (
             <div>
@@ -173,6 +189,10 @@ class General extends React.Component {
 
                 <button> <a href="/Home"> Back </a> </button>
                 <button onClick={this.nextPage}> Next </button>
+
+                <div>
+                    {error}
+                </div>
 
             </div>
         )
