@@ -6,17 +6,26 @@ function Home() {
     return (
         <div className="App">
             <header className="App-header">
-                <h2>Welcome to ...</h2>
-                <h1>SUBLIST</h1>
-                <p>
-                    I am looking to...
-                </p>
-                <a href="/Subleaser">
+                <h2>Welcome to</h2>
+                <h1>Sublist</h1>
+                <h3>
+                    I am looking to
+                </h3>
+                <button><a href="/Subleaser">
                     Rent out my apartment
+                </a></button>
+
+                <button>
+                    <a href="/Subtenant">
+                        Find a temporary apartment
                 </a>
-                <a href="/Subtenant">
-                    Find a temporary apartment
+                </button>
+
+                <button>
+                    <a href="/Login">
+                        I am a returning user
                 </a>
+                </button>
 
             </header>
         </div>

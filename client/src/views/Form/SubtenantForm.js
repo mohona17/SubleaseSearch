@@ -40,7 +40,6 @@ class SubtenantForm extends React.Component {
     }
 
     render() {
-        
         return (
             <div>
                 <General currentStep={this.state.currentStep} next={this.nextStep}></General>
@@ -48,7 +47,6 @@ class SubtenantForm extends React.Component {
                 <Subtenant1 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></Subtenant1>
                 <Subtenant2 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></Subtenant2>
                 <Subtenant3 currentStep={this.state.currentStep} next={this.nextStep} back={this.backStep}></Subtenant3>
-                <Listings currentStep={this.state.currentStep}></Listings>
             </div>
         )
     };

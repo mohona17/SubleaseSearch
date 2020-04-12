@@ -18,7 +18,11 @@ class Subleaser5 extends React.Component {
                 <h2>Listing successfully uploaded</h2>
 
                 <button onClick={this.props.back}> Back </button>
-                <button onClick={this.props.next}> Next </button>
+                <button>
+                    <a href="/MyListings">
+                        Listings
+                </a>
+                </button>
             </div >
         )
     };
