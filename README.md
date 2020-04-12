@@ -3,6 +3,7 @@ This project has moved maintainers and is no longer developed here. The up to da
 
 ### Packages to install: 
 npm install validator
+npm add ws
 #### _**IMPORTANT NOTE**_ - 
 This project does not have a mongoDB connection setup. Setup the connection based on the environments below.
 - local development: create a config file (make sure to name it config.js) in the config folder, which exports your db.uri connection. An example is provided, config/config.example.js. This file will be ignored by git so your db credentials will be kept safe when the app is deployed.
