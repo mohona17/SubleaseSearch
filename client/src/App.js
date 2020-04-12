@@ -6,7 +6,7 @@ import Header from "./components/Header/Header"
 import SubtenantForm from "./views/Form/SubtenantForm"
 import SubleaserForm from "./views/Form/SubleaserForm"
 import Listings from "./views/Listings/Listings"
-import Messages from "./views/Messages/Messages"
+import Messages from "./components/Messages/Chat"
 
 const DUMMY_DATA = [
   {
@@ -39,10 +39,7 @@ class App extends React.Component {
           <Route exact path="/Subtenant" component={SubtenantForm} />    
           <Route exact path="/Subleaser" component={SubleaserForm} />
           <Route exact path="/Listings" component={Listings} />
-          <Route 
-            exact path="/Messages" 
-            render={(props) => <Messages {...props} messages = {this.state.messages} />}
-          />
+          <Route exact path="/Messages" component={Messages} />
           <Route component={NotFound}/>
         </Switch>
       </div>
