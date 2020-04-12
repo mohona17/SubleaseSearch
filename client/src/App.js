@@ -8,23 +8,46 @@ import SubleaserForm from "./views/Form/SubleaserForm"
 import Listings from "./views/Listings/Listings"
 import Messages from "./views/Messages/Messages"
 
+const DUMMY_DATA = [
+  {
+    senderId: "perborgen",
+    text: "who'll win?"
+  },
+  {
+    senderId: "janedoe",
+    text: "who'll win?"
+  }
+]
 
-const App = () => {
-  return (
-    <div>
-      <Switch>
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/">
-          <Redirect to="/Home" />
-        </Route>
-        <Route exact path="/Subtenant" component={SubtenantForm} />    
-        <Route exact path="/Subleaser" component={SubleaserForm} />
-        <Route exact path="/Listings" component={Listings} />
-        <Route exact path="/Messages" component={Messages} />
-        <Route component={NotFound}/>
-      </Switch>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      messages: DUMMY_DATA
+    }
+  }
+
+  render(){
+    return (
+      <div>
+        <Switch>
+          <Route exact path="/Home" component={Home} />
+          <Route exact path="/">
+           <Redirect to="/Home" />
+          </Route>
+          <Route exact path="/Subtenant" component={SubtenantForm} />    
+          <Route exact path="/Subleaser" component={SubleaserForm} />
+          <Route exact path="/Listings" component={Listings} />
+          <Route 
+            exact path="/Messages" 
+            render={(props) => <Messages {...props} messages = {this.state.messages} />}
+          />
+          <Route component={NotFound}/>
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
