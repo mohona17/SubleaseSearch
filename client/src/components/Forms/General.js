@@ -130,10 +130,10 @@ class General extends React.Component {
         } = this.state;
         return (
             <div>
-                <h2>Please create a profile</h2>
-                <hr></hr>
                 <Form>
                     <div class="forms">
+                        <h2>Please create a profile</h2>
+                        <hr></hr>
                         <Form.Row>
                             <Form.Group as={Col} md="6" controlId="first_name">
                                 <Form.Label><h5>First Name</h5></Form.Label>
@@ -209,8 +209,9 @@ class General extends React.Component {
 
 
                         <div class="buttons">
-                            <Button variant="outline-info" size="sm"> <a href="/Home"> Back </a> </Button>
-                            <Button variant="outline-info" size="sm" onClick={this.nextPage}> Next </Button>
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            <button class="back_btn"> <a href="/Home"> Back </a> </button>
+                            <button class="next_btn" onClick={this.nextPage}> Next </button>
                         </div>
                     </div>
 

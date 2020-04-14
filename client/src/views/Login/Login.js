@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from '../../assets/logo.svg';
 import './Login.css';
+import { Button, Form, Col, InputGroup } from 'react-bootstrap';
+
 
 class General extends React.Component {
     constructor(props) {
@@ -35,23 +37,29 @@ class General extends React.Component {
         } = this.state;
         return (
             <div>
-                <h2>Login</h2>
-                <hr></hr>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={this.onTextboxChangeEmail}
-                ></input><br />
-                <h4>Password</h4>
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={this.onTextboxChangePassword}
-                ></input><br />
+                <Form>
+                    <div class="forms">
+                        <h2>Login</h2>
+                        <hr></hr>
 
-                <button> <a href="/Listings"> Login (now goes to /Listings) </a> </button>
+                        <Form.Control input
+                            type="email"
+                            placeholder="Email"
+                            value={email}
+                            onChange={this.onTextboxChangeEmail}
+                        ></Form.Control><br />
+
+                        <Form.Label><h5>Password</h5></Form.Label>
+                        <Form.Control input
+                            type="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={this.onTextboxChangePassword}
+                        ></Form.Control><br />
+
+                        <button class="login"> <a href="/Listings"> Login (now goes to /Listings) </a> </button>
+                    </div>
+                </Form>
 
             </div>
         )

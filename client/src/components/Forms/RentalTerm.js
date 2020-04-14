@@ -90,26 +90,27 @@ class RentalTerm extends React.Component {
                     <div class="forms">
                         <h2>Choose a Rental Term</h2>
                         <hr></hr>
-                        <input
+                        <Form.Control input
                             type="date"
                             placeholder="MM/DD/YYYY"
                             value={startDate}
                             onChange={this.onTextboxChangeStartDate}
-                        ></input><br />
-                        <input
+                        ></Form.Control>
+                        <Form.Label>to</Form.Label>
+                        <Form.Control input
                             type="date"
                             placeholder="MM/DD/YYYY"
                             value={endDate}
                             onChange={this.onTextboxChangeEndDate}
-                        ></input><br />
+                        ></Form.Control><br />
 
                         <div class="buttons">
-                            <Button variant="outline-info" size="sm" onClick={this.props.back}> Back </Button>
-                            <button onClick={this.nextPage}> Next </button>
+                            <button class="back_btn" onClick={this.props.back}> Back </button>
+                            <button class="next_btn" onClick={this.nextPage}> Next </button>
                         </div>
                     </div>
 
-                    <div>
+                    <div class="error_msg">
                         {error}
                     </div>
                 </Form >
