@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect  } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Home from "./views/Home/Home"
 import NotFound from "./views/NotFound"
 import Header from "./components/Header/Header"
@@ -9,6 +9,7 @@ import Listings from "./views/Listings/Listings"
 import MyListings from "./views/Listings/MyListings"
 import Messages from "./views/Messages/Messages"
 import Login from "./views/Login/Login"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const App = () => {
@@ -19,13 +20,13 @@ const App = () => {
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>
-        <Route exact path="/Subtenant" component={SubtenantForm} />    
+        <Route exact path="/Subtenant" component={SubtenantForm} />
         <Route exact path="/Subleaser" component={SubleaserForm} />
         <Route exact path="/Listings" component={Listings} />
         <Route exact path="/MyListings" component={MyListings} />
         <Route exact path="/Messages" component={Messages} />
         <Route exact path="/Login" component={Login} />
-        <Route component={NotFound}/>
+        <Route component={NotFound} />
       </Switch>
     </div>
   );
