@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Forms.css';
+import { Button, Form, Col, InputGroup } from 'react-bootstrap';
 
 class Subtenant2 extends React.Component {
     constructor(props) {
@@ -9,7 +10,8 @@ class Subtenant2 extends React.Component {
         this.state = {
             utilities: false,
             pets: false,
-            roommates: Number,
+            roommates: null,
+            error: [],
         };
 
         this.onTextboxChangeUtilities = this.onTextboxChangeUtilities.bind(this);
@@ -47,8 +49,29 @@ class Subtenant2 extends React.Component {
         });
     }
 
+    nextPage = () => {
+        const {
+            utilities,
+            pets,
+            roommates,
+        } = this.state;
+
+
+        var errorMessage = [];
+
+        if (roommates == null)
+            errorMessage = errorMessage.concat("Make sure to specify number of roommates");
+
+        console.log(errorMessage)
+        this.setState({
+            error: errorMessage
+        }, () => {
+            if (errorMessage.length == 0) this.props.next();
+        });
+    }
+
     render() {
-        if (this.props.currentStep !== 4) {
+        if (this.props.currentStep != 4) {
             return null
         }
 
@@ -56,38 +79,48 @@ class Subtenant2 extends React.Component {
             utilities,
             pets,
             roommates,
+            error,
         } = this.state;
         return (
             <div>
-                <h2>Refine your results!</h2>
-                <hr></hr>
-                <input
-                    type="checkbox"
-                    value={utilities}
-                    onChange={this.onTextboxChangeUtilities}
-                ></input>
-                <h4>utilities included</h4>
-                <br />
-                <input
-                    type="checkbox"
-                    value={pets}
-                    onChange={this.onTextboxChangePets}
-                ></input>
-                <h4>pets allowed</h4>
-                <br />
-                <h4>Number of roommates:</h4>
-                <input
-                    type="number"
-                    placeholder="0"
-                    min="0"
-                    step="1"
-                    value={roommates}
-                    onChange={this.onTextboxChangeRoommates}
-                ></input><br />
+                <Form>
+                    <div class="forms">
+                        <h2>Refine your results!</h2>
+                        <hr></hr>
+                        <Form.Control input
+                            type="checkbox"
+                            value={utilities}
+                            onChange={this.onTextboxChangeUtilities}
+                        ></Form.Control>
+                        <h5>utilities included</h5>
+                        <br />
+                        <Form.Control input
+                            type="checkbox"
+                            value={pets}
+                            onChange={this.onTextboxChangePets}
+                        ></Form.Control>
+                        <h5>Pets allowed</h5>
+                        <br />
+                        <h5>Number of roommates</h5>
+                        <Form.Control input
+                            type="number"
+                            placeholder="0"
+                            min="0"
+                            step="1"
+                            value={roommates}
+                            onChange={this.onTextboxChangeRoommates}
+                        ></Form.Control><br />
 
-                <button onClick={this.props.back}> Back </button>
-                <button onClick={this.props.next}> Next </button>
+                        <div class="buttons">
+                            <button class="back_btn" onClick={this.props.back}> Back </button>
+                            <button class="back_btn" onClick={this.nextPage}> Next </button>
+                        </div>
+                    </div>
 
+                    <div class="error_msg">
+                        {error}
+                    </div>
+                </Form>
             </div>
         )
     };

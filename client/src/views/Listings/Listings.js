@@ -93,12 +93,7 @@ class Listings extends React.Component {
 
     }
 
-    render() {
-        if (this.props.currentStep !== 6) {
-            return null
-        }
-
-        
+    render() {        
         return (
             <div>
                 Sort by complex: 

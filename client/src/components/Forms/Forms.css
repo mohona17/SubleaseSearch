@@ -1,0 +1,54 @@
+/* General.js */
+div {
+    display: block;
+}
+
+h2 {
+    text-align: center;
+}
+
+Form {
+    position: relative;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 8px 8px 0 0;
+    border-width: .2rem .2rem 0;
+    border: .2rem solid #ececec;
+}
+
+Form h2 {
+    color: #72A2C2;
+}
+
+.forms {
+    margin: 5%;
+}
+
+Form.Label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.buttons {
+    text-align: right;
+}
+
+.back_btn, 
+.next_btn {
+    background: #72A2C2;
+    color: white;
+    border-radius: 15px;
+    padding: 5px 20px;
+    border: 0;
+
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+.error_msg {
+    color: red;
+}

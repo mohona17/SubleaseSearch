@@ -1,12 +1,25 @@
 import React from 'react';
 import './Messages.css';
 
-function Messages() {
+class Messages extends React.Component {
+    render() {
     return (
-        <div className="App">
-            <p>Messages go here</p>
-        </div>
+            <ul className="message-list">
+                {this.props.messages.map(message => {
+                    return (
+                        <li key = {message.id}>
+                            <div>
+                                {message.senderId}
+                            </div>
+                            <div>
+                                {message.text}
+                            </div>
+                        </li>
+                    )
+                })}
+            </ul>
     );
+}
 }
 
 export default Messages;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Forms.css';
+import { Button, Form, Col, InputGroup } from 'react-bootstrap';
 
 class Subleaser2 extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class Subleaser2 extends React.Component {
             furnished: false,
             utilities: false,
             pets: false,
-            roommates: Number,
+            roommates: null,
         };
 
         this.onTextboxChangeFurnished = this.onTextboxChangeFurnished.bind(this);
@@ -20,14 +21,14 @@ class Subleaser2 extends React.Component {
     }
 
     onTextboxChangeFurnished(event) {
-        if (this.state.genderFemale == true) {
+        if (this.state.furnished == true) {
             this.setState({
-                genderFemale: false,
+                furnished: false,
             });
         }
         else {
             this.setState({
-                genderFemale: true,
+                furnished: true,
             });
         }
     }
@@ -61,8 +62,31 @@ class Subleaser2 extends React.Component {
         });
     }
 
+    nextPage = () => {
+        const {
+            furnished,
+            utilities,
+            pets,
+            roommates
+        } = this.state;
+
+
+        var errorMessage = [];
+
+        console.log(roommates)
+        if (roommates == null)
+            errorMessage = errorMessage.concat("Make sure all fields are complete");
+
+        console.log(errorMessage)
+        this.setState({
+            error: errorMessage
+        }, () => {
+            if (errorMessage.length == 0) this.props.next();
+        });
+    }
+
     render() {
-        if (this.props.currentStep !== 4) {
+        if (this.props.currentStep != 4) {
             return null
         }
 
@@ -71,45 +95,59 @@ class Subleaser2 extends React.Component {
             utilities,
             pets,
             roommates,
+            error,
         } = this.state;
         return (
             <div>
-                <h2>Add more information!</h2>
-                <hr></hr>
-                <input
-                    type="checkbox"
-                    value={furnished}
-                    onChange={this.onTextboxChangeFurnished}
-                ></input>
-                <h4>furnished</h4>
-                <br />
-                <input
-                    type="checkbox"
-                    value={pets}
-                    onChange={this.onTextboxChangePets}
-                ></input>
-                <h4>pets allowed</h4>
-                <br />
-                <h4>Number of roommates:</h4>
-                <input
-                    type="number"
-                    placeholder="0"
-                    min="0"
-                    step="1"
-                    value={roommates}
-                    onChange={this.onTextboxChangeRoommates}
-                ></input><br />
-                <input
-                    type="checkbox"
-                    value={utilities}
-                    onChange={this.onTextboxChangeUtilities}
-                ></input>
-                <h4>utilities included</h4>
+                <Form>
+                    <h2>Please add more information</h2>
+                    <hr></hr>
+                    <div class="forms">
+                        <Form.Control input
+                            type="checkbox"
+                            value={furnished}
+                            onChange={this.onTextboxChangeFurnished}
+                        ></Form.Control>
+                        <h5>Furnished</h5>
+                        <br />
 
-                <button onClick={this.props.back}> Back </button>
-                <button onClick={this.props.next}> Next </button>
+                        <Form.Control input
+                            type="checkbox"
+                            value={pets}
+                            onChange={this.onTextboxChangePets}
+                        ></Form.Control>
 
-            </div>
+                        <Form.Label><h5>Pets allowed</h5></Form.Label>
+                        <br />
+
+                        <Form.Label><h5>Number of roommates</h5></Form.Label>
+                        <Form.Control input
+                            type="number"
+                            placeholder="0"
+                            min="0"
+                            step="1"
+                            value={roommates}
+                            onChange={this.onTextboxChangeRoommates}
+                        ></Form.Control><br />
+
+                        <Form.Control input
+                            type="checkbox"
+                            value={utilities}
+                            onChange={this.onTextboxChangeUtilities}
+                        ></Form.Control>
+                        <h5>Utilities included</h5>
+
+                        <div class="buttons">
+                            <button class="back_btn" onClick={this.props.back}> Back </button>
+                            <button class="next_btn" onClick={this.nextPage}> Next </button>
+                        </div>
+                    </div>
+
+                    <div class="error_msg">
+                        {error}
+                    </div>
+                </Form>
+            </div >
         )
     };
 }

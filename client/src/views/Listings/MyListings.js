@@ -7,12 +7,7 @@ class Listings extends React.Component {
 
     }
 
-    render() {
-        if (this.props.currentStep !== 8) {
-            return null
-        }
-
-        
+    render() {     
         return (
             <div>
                 My listings go here
