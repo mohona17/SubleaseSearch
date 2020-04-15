@@ -7,7 +7,7 @@
 }
 
 .App-header {
-    background-color: #282c34;
+    background-color: #28666E;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -19,4 +19,35 @@
 
 .App-link {
     color: #09d3ac;
+}
+
+.rent_btn,
+.temp_btn {
+    color: white;
+    border-radius: 30px;
+    padding: 5px 20px;
+    border: 0;
+    font-weight: 100;
+}
+
+.rent_btn {
+    background: #72A2C2;
+}
+
+.temp_btn {
+    background: #82E0AA
+}
+
+.return_btn {
+    color: #D7DBDD;
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+a:hover {
+    color: transparent;
+    text-decoration: none;
 }

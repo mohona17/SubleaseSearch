@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Forms.css';
+import { Button, Form, Col, InputGroup } from 'react-bootstrap';
 
 class Subleaser4 extends React.Component {
     constructor(props) {
@@ -50,21 +51,30 @@ class Subleaser4 extends React.Component {
 
         return (
             < div >
-                <h2>Please upload a description and some photos of your sublease.</h2>
-                <hr></hr>
-                <h1>Insert image upload</h1>
-                <h4>Description</h4>
-                <input
-                    type="textbox"
-                    placeholder="Write your description here!"
-                    value={description}
-                    onChange={this.onTextboxChangeDescription}
-                ></input>
-                <button onClick={this.props.back}> Back </button>
-                <button onClick={this.nextPage}> Next </button>
-                <div>
-                    {error}
-                </div>
+                <Form>
+                    <div class="forms">
+                        <h2>Please upload a description and some photos of your sublease.</h2>
+                        <hr></hr>
+                        <Form.Label><h3>Insert image upload</h3></Form.Label>
+                        <br />
+                        <Form.Label><h5>Description</h5></Form.Label>
+                        <Form.Control input
+                            type="textbox"
+                            placeholder="Write your description here!"
+                            value={description}
+                            onChange={this.onTextboxChangeDescription}
+                        ></Form.Control>
+
+                        <div class="buttons">
+                            <Button variant="outline-info" size="sm" onClick={this.props.back}> Back </Button>
+                            <Button variant="outline-info" size="sm" onClick={this.nextPage}> Next </Button>
+                        </div>
+
+                        <div class="error_msg">
+                            {error}
+                        </div>
+                    </div>
+                </Form>
             </div >
         )
     };

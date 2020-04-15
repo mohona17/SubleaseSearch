@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import './Forms.css';
 import validator from 'validator'
+import { Button, Form, Col, InputGroup } from 'react-bootstrap';
 
 class General extends React.Component {
     constructor(props) {
@@ -129,70 +130,96 @@ class General extends React.Component {
         } = this.state;
         return (
             <div>
-                <h2>Please create a profile</h2>
-                <hr></hr>
-                <h4>First Name</h4>
-                <input
-                    type="name"
-                    placeholder="First Name"
-                    value={firstName}
-                    onChange={this.onTextboxChangeFirstName}
-                ></input><br />
-                <h4>Last Name</h4>
+                <Form>
+                    <div class="forms">
+                        <h2>Please create a profile</h2>
+                        <hr></hr>
+                        <Form.Row>
+                            <Form.Group as={Col} md="6" controlId="first_name">
+                                <Form.Label><h5>First Name</h5></Form.Label>
+                                <Form.Control input
+                                    type="name"
+                                    placeholder="First Name"
+                                    value={firstName}
+                                    onChange={this.onTextboxChangeFirstName}
+                                ></Form.Control><br />
+                            </Form.Group>
 
-                <input
-                    type="name"
-                    placeholder="Last Name"
-                    value={lastName}
-                    onChange={this.onTextboxChangeLastName}
-                ></input><br />
-                <h4>Preferred Email</h4>
+                            <Form.Group as={Col} md="6" controlId="last_name">
+                                <Form.Label><h5>Last Name</h5></Form.Label>
+                                <Form.Control input
+                                    type="name"
+                                    placeholder="Last Name"
+                                    value={lastName}
+                                    onChange={this.onTextboxChangeLastName}
+                                ></Form.Control><br />
+                            </Form.Group>
+                        </Form.Row>
 
-                <input
-                    type="email"
-                    placeholder="Preferred Email"
-                    value={preferredEmail}
-                    onChange={this.onTextboxChangePreferredEmail}
-                ></input><br />
-                <h4>School Email</h4>
+                        <Form.Group controlId="email">
+                            <Form.Label><h5> Preferred Email</h5></Form.Label>
+                            <Form.Control input
+                                type="email"
+                                placeholder="Preferred Email"
+                                value={preferredEmail}
+                                onChange={this.onTextboxChangePreferredEmail}
+                            ></Form.Control><br />
+                        </Form.Group>
 
-                <input
-                    type="email"
-                    placeholder="School Email"
-                    value={schoolEmail}
-                    onChange={this.onTextboxChangeSchoolEmail}
-                ></input><br />
-                <h4>Phone number</h4>
+                        <Form.Group controlId="schoolemail">
+                            <Form.Label><h5>School Email</h5></Form.Label>
+                            <Form.Control input
+                                type="email"
+                                placeholder="School Email"
+                                value={schoolEmail}
+                                onChange={this.onTextboxChangeSchoolEmail}
+                            ></Form.Control><br />
+                        </Form.Group>
 
-                <input
-                    type="tel"
-                    placeholder="   -   -    "
-                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                    value={phoneNumber}
-                    onChange={this.onTextboxChangePhoneNumber}
-                ></input><br />
-                <h4>Password</h4>
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={this.onTextboxChangePassword}
-                ></input><br />
+                        <Form.Group controlId="phone">
+                            <Form.Label><h5>Phone number</h5></Form.Label>
+                            <Form.Control input
+                                type="tel"
+                                placeholder="   -   -    "
+                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                value={phoneNumber}
+                                onChange={this.onTextboxChangePhoneNumber}
+                            ></Form.Control><br />
+                        </Form.Group>
 
-                <h4>Confirm Password</h4>
-                <input
-                    type="password"
-                    placeholder="Confirm Password"
-                    value={passwordConfirmation}
-                    onChange={this.onTextboxChangeConfirmedPassword}
-                ></input><br />
+                        <Form.Group controlId="password">
+                            <Form.Label><h5>Password</h5></Form.Label>
+                            <Form.Control input
+                                type="password"
+                                placeholder="Password"
+                                value={password}
+                                onChange={this.onTextboxChangePassword}
+                            ></Form.Control><br />
+                        </Form.Group>
 
-                <button> <a href="/Home"> Back </a> </button>
-                <button onClick={this.nextPage}> Next </button>
+                        <Form.Group controlId="confirm_pass">
+                            <Form.Label><h5>Confirm Password</h5></Form.Label>
+                            <Form.Control input
+                                type="password"
+                                placeholder="Confirm Password"
+                                value={passwordConfirmation}
+                                onChange={this.onTextboxChangeConfirmedPassword}
+                            ></Form.Control>
+                        </Form.Group>
 
-                <div>
-                    {error}
-                </div>
+
+                        <div class="buttons">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            <button class="back_btn"> <a href="/Home"> Back </a> </button>
+                            <button class="next_btn" onClick={this.nextPage}> Next </button>
+                        </div>
+                    </div>
+
+
+                    <div class="error_msg">
+                        {error}
+                    </div>
+                </Form>
 
             </div>
         )

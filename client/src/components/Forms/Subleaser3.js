@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Forms.css';
+import { Button, Form, Col, InputGroup } from 'react-bootstrap';
 
 class Subleaser3 extends React.Component {
     constructor(props) {
@@ -26,7 +27,7 @@ class Subleaser3 extends React.Component {
                 preferences: false,
                 genderFemale: false,
                 genderMale: false,
-                edu:false,
+                edu: false,
             });
         }
         else {
@@ -141,15 +142,23 @@ class Subleaser3 extends React.Component {
         return (
 
             < div >
-                <h2>Do you have preferences for a subtenant? Check the box if so</h2>
-                <input
-                    type="checkbox"
-                    value={preferences}
-                    onChange={this.onTextboxChangePreferences}
-                ></input>
-                {preferenceForm}
-                <button onClick={this.props.back}> Back </button>
-                <button onClick={this.nextPage}> Next </button>
+                <Form>
+                    <div class="forms">
+                        <h2>Do you have preferences for a subtenant? Check the box if so</h2>
+                        <hr></hr>
+                        <Form.Control input
+                            type="checkbox"
+                            value={preferences}
+                            onChange={this.onTextboxChangePreferences}
+                        ></Form.Control>
+                        {preferenceForm}
+
+                        <div class="buttons">
+                            <Button variant="outline-info" size="sm" onClick={this.props.back}> Back </Button>
+                            <Button variant="outline-info" size="sm" onClick={this.nextPage}> Next </Button>
+                        </div>
+                    </div>
+                </Form>
                 <div>
                     {error}
                 </div>
