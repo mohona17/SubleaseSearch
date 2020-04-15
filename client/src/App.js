@@ -6,8 +6,9 @@ import Header from "./components/Header/Header"
 import SubtenantForm from "./views/Form/SubtenantForm"
 import SubleaserForm from "./views/Form/SubleaserForm"
 import Listings from "./views/Listings/Listings"
+import Messages from "./components/Messages/Chat"
+
 import MyListings from "./views/Listings/MyListings"
-import Messages from "./views/Messages/Messages"
 import Login from "./views/Login/Login"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -30,6 +31,7 @@ const App = () => {
       </Switch>
     </div>
   );
+
 }
 
 export default App;

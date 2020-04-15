@@ -3,6 +3,7 @@ This project has moved maintainers and is no longer developed here. The up to da
 
 ### Packages to install: 
 npm install validator
+npm add ws
 npm install bootstrap
 #### _**IMPORTANT NOTE**_ - 
 This project does not have a mongoDB connection setup. Setup the connection based on the environments below.

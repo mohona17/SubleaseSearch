@@ -1,7 +1,13 @@
-const express = require('./config/express.js')
- 
-// Use env port or default
-const port = process.env.PORT || 5000;
+const WebSocket = require('ws');
 
-const app = express.init()
-app.listen(port, () => console.log(`Server now running on port ${port}!`));
+const wss = new WebSocket.Server({ port: 3030 });
+
+wss.on('connection', function connection(ws) {
+  ws.on('message', function incoming(data) {
+    wss.clients.forEach(function each(client) {
+      if (client !== ws && client.readyState === WebSocket.OPEN) {
+        client.send(data);
+      }
+    });
+  });
+});

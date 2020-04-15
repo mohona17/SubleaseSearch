@@ -29,10 +29,12 @@
     "mongoose": "^5.7.1",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
+    "react-websocket": "^2.1.0",
     "react-bootstrap": "^1.0.0",
     "should": "^13.2.3",
     "supertest": "^4.0.2",
-    "validator": "^13.0.0"
+    "validator": "^13.0.0",
+    "ws": "^7.2.3"
   },
   "homepage": "https://github.com/UFWebApps/React_Template_Repo#readme"
 }
