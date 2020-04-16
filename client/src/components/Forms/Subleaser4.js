@@ -11,6 +11,7 @@ class Subleaser4 extends React.Component {
         this.state = {
             description: '',
             pictures: [],
+            pictureNames: [],
         };
 
         this.onTextboxChangeDescription = this.onTextboxChangeDescription.bind(this);
@@ -26,6 +27,13 @@ class Subleaser4 extends React.Component {
     addPic(picture) {
         this.setState({
             pictures: this.state.pictures.concat(picture),
+            pictureNames: this.state.pictureNames.concat(picture[0].name)
+        }, () => {
+            if (this.state.pictureNames.length != 0) {
+                this.setState({
+                    pictureNames: this.state.pictureNames.concat(", ")
+                });
+            }
         });
     }
 
@@ -55,7 +63,12 @@ class Subleaser4 extends React.Component {
         const {
             description,
             error,
+            pictures,
+            pictureNames,
         } = this.state;
+
+        var filesUploadedLabel = "You have uploaded: ";
+        if (pictures.length == 0) filesUploadedLabel = "You have not uploaded any files";
 
         return (
             < div >
@@ -71,6 +84,8 @@ class Subleaser4 extends React.Component {
                             imgExtension={['.jpg', '.gif', '.png', '.gif']}
                             maxFileSize={5242880}
                         />
+                        {filesUploadedLabel}
+                        {pictureNames}
                         <br />
                         <Form.Label><h5>Description</h5></Form.Label>
                         <Form.Control input
