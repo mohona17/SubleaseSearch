@@ -87,6 +87,7 @@ class Subleaser4 extends React.Component {
                         {filesUploadedLabel}
                         {pictureNames}
                         <br />
+                        <br />
                         <Form.Label><h5>Description</h5></Form.Label>
                         <Form.Control input
                             type="textbox"
