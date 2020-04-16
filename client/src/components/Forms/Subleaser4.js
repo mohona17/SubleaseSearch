@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Forms.css';
 import { Button, Form, Col, InputGroup } from 'react-bootstrap';
+import ImageUploader from 'react-images-upload';
 
 class Subleaser4 extends React.Component {
     constructor(props) {
@@ -9,9 +10,11 @@ class Subleaser4 extends React.Component {
 
         this.state = {
             description: '',
+            pictures: [],
         };
 
         this.onTextboxChangeDescription = this.onTextboxChangeDescription.bind(this);
+        this.addPic = this.addPic.bind(this);
     }
 
     onTextboxChangeDescription(event) {
@@ -19,6 +22,11 @@ class Subleaser4 extends React.Component {
             description: event.target.vale,
         });
 
+    }
+    addPic(picture) {
+        this.setState({
+            pictures: this.state.pictures.concat(picture),
+        });
     }
 
     nextPage = () => {
@@ -55,7 +63,14 @@ class Subleaser4 extends React.Component {
                     <div class="forms">
                         <h2>Please upload a description and some photos of your sublease.</h2>
                         <hr></hr>
-                        <Form.Label><h3>Insert image upload</h3></Form.Label>
+                        {/* <Form.Label><h3>Insert image upload</h3></Form.Label> */}
+                        <ImageUploader
+                            withIcon={true}
+                            buttonText='Choose images of your lease!'
+                            onChange={this.addPic}
+                            imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                            maxFileSize={5242880}
+                        />
                         <br />
                         <Form.Label><h5>Description</h5></Form.Label>
                         <Form.Control input
