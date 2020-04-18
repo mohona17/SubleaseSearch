@@ -159,18 +159,11 @@ class Subleaser3 extends React.Component {
                             <button class="back_btn" onClick={this.nextPage}> Next </button>
                         </div>
                     </div>
-<<<<<<< Updated upstream
-                </Form>
-                <div>
-                    {error}
-                </div>
-=======
 
                     <div class="error_msg">
                         {error}
                     </div>
                 </Form>
->>>>>>> Stashed changes
             </div >
         )
     };
