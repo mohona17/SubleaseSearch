@@ -42,6 +42,7 @@ class General extends React.Component {
                         <h2>Login</h2>
                         <hr></hr>
 
+                        <Form.Label><h5>Email</h5></Form.Label>
                         <Form.Control input
                             type="email"
                             placeholder="Email"
@@ -57,7 +58,9 @@ class General extends React.Component {
                             onChange={this.onTextboxChangePassword}
                         ></Form.Control><br />
 
-                        <button class="login"> <a href="/Listings"> Login (now goes to /Listings) </a> </button>
+                        <div class="buttons">
+                            <button class="login"> <a href="/Listings"> Login (now goes to /Listings) </a> </button>
+                        </div>
                     </div>
                 </Form>
 

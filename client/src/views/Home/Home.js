@@ -22,7 +22,6 @@ function Home() {
                         Find a temporary apartment
                 </a>
                 </button>
-                <br />
 
                 <div class="return_btn">
                     <a href="/Login">

@@ -21,7 +21,8 @@ class Subleaser4 extends React.Component {
 
     }
 
-    nextPage = () => {
+    nextPage = (e) => {
+        e.preventDefault();
         const {
             description,
         } = this.state;
@@ -29,7 +30,7 @@ class Subleaser4 extends React.Component {
         var errorMessage = [];
 
         if (description == '')
-            errorMessage = errorMessage.concat("Make sure you write a description");
+            errorMessage = errorMessage.concat("*Make sure you write a description");
 
         console.log(errorMessage)
         this.setState({
@@ -49,6 +50,12 @@ class Subleaser4 extends React.Component {
             error,
         } = this.state;
 
+<<<<<<< Updated upstream
+=======
+        var filesUploadedLabel = "You have uploaded: ";
+        if (pictures.length == 0) filesUploadedLabel = "*You have not uploaded any files";
+
+>>>>>>> Stashed changes
         return (
             < div >
                 <Form>
@@ -66,8 +73,8 @@ class Subleaser4 extends React.Component {
                         ></Form.Control>
 
                         <div class="buttons">
-                            <Button variant="outline-info" size="sm" onClick={this.props.back}> Back </Button>
-                            <Button variant="outline-info" size="sm" onClick={this.nextPage}> Next </Button>
+                            <button class="back_btn" onClick={this.props.back}> Back </button>
+                            <button class="back_btn" onClick={this.nextPage}> Next </button>
                         </div>
 
                         <div class="error_msg">

@@ -50,7 +50,8 @@ class Subtenant1 extends React.Component {
         });
     }
 
-    nextPage = () => {
+    nextPage = (e) => {
+        e.preventDefault();
         const {
             budget,
             milesHigh,
@@ -65,9 +66,9 @@ class Subtenant1 extends React.Component {
 
         console.log(budget)
         if (budget == null || milesHigh == null || milesLow == null || bath == 0 || beds == 0)
-            errorMessage = errorMessage.concat("Some fields were left blank. ");
+            errorMessage = errorMessage.concat("*Some fields were left blank. ");
         if (milesLow >= milesHigh)
-            errorMessage = errorMessage.concat("Ensure that the range for miles is correct. ");
+            errorMessage = errorMessage.concat("*Ensure that the range for miles is correct. ");
 
         console.log(errorMessage)
         this.setState({
@@ -160,7 +161,7 @@ class Subtenant1 extends React.Component {
                         </div>
                     </div>
 
-                    <div class="error msg">
+                    <div class="error_msg">
                         {error}
                     </div>
                 </Form>
