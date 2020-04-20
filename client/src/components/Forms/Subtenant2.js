@@ -49,7 +49,8 @@ class Subtenant2 extends React.Component {
         });
     }
 
-    nextPage = () => {
+    nextPage = (e) => {
+        e.preventDefault();
         const {
             utilities,
             pets,
@@ -60,7 +61,7 @@ class Subtenant2 extends React.Component {
         var errorMessage = [];
 
         if (roommates == null)
-            errorMessage = errorMessage.concat("Make sure to specify number of roommates");
+            errorMessage = errorMessage.concat("*Make sure to specify number of roommates");
 
         console.log(errorMessage)
         this.setState({

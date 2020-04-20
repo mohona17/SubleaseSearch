@@ -40,7 +40,8 @@ class Subleaser1 extends React.Component {
             bath: event.target.value,
         });
     }
-    nextPage = () => {
+    nextPage = (e) => {
+        e.preventDefault();
         const {
             rent,
             address,
@@ -53,7 +54,7 @@ class Subleaser1 extends React.Component {
 
         //TODO CHECK ADDRESS
         if (rent == 0 || address == '' || beds == 0 || bath == 0)
-            errorMessage = errorMessage.concat("Some fields were left blank");
+            errorMessage = errorMessage.concat("*Some fields were left blank");
 
         console.log(errorMessage)
         this.setState({
@@ -100,18 +101,7 @@ class Subleaser1 extends React.Component {
                             ></Form.Control><br />
                         </Form.Group>
 
-                        {/* <Form.Group controlId="layout"> */}
-                            <h4>Layout</h4>
-                            {/* <Form.Control input
-                            type="number"
-                            placeholder="#"
-                            min="0"
-                            step="1"
-                            value={layout}
-                            onChange={this.onTextboxChangeLayout}
-                            ></Form.Control><br />
-                        </Form.Group> */}
-
+                        <h4>Layout</h4>
                         <Form.Group controlId="beds">
                             <h5># Beds</h5>
                             <Form.Control input

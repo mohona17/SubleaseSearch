@@ -20,12 +20,14 @@ class Subtenant3 extends React.Component {
                     <div class="forms">
                         All done. Click to go to your listings.
                         <br />
-                        <button class="back_btn" onClick={this.props.back}> Back </button>
-                        <button class="next_btn">
-                            <a href="/Listings">
-                                Listings
+                        <div class="buttons">
+                            <button class="back_btn" onClick={this.props.back}> Back </button>
+                            <button class="next_btn">
+                                <a href="/Listings">
+                                    Listings
                                 </a>
-                        </button>
+                            </button>
+                        </div>
                     </div>
                 </Form>
             </div>

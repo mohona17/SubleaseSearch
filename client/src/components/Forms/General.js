@@ -29,7 +29,7 @@ class General extends React.Component {
     }
 
     onTextboxChangeFirstName(event) {
-        if (/\d/.test(event.target.value)) this.props.handleError("First name cannot have number")
+        if (/\d/.test(event.target.value)) this.props.handleError("*First name cannot have number")
         else {
             this.setState({
                 firstName: event.target.value,
@@ -37,7 +37,7 @@ class General extends React.Component {
         }
     }
     onTextboxChangeLastName(event) {
-        if (/\d/.test(event.target.value)) this.props.handleError("Last name cannot have number")
+        if (/\d/.test(event.target.value)) this.props.handleError("*Last name cannot have number")
         else {
             this.setState({
                 lastName: event.target.value,
@@ -79,7 +79,8 @@ class General extends React.Component {
         return (isValidPhoneNumber)
     }
 
-    nextPage = () => {
+    nextPage = (e) => {
+        e.preventDefault();
         const {
             firstName,
             lastName,
@@ -94,15 +95,15 @@ class General extends React.Component {
         var errorMessage = [];
         console.log("General next")
         if (firstName == '' || lastName == '' || preferredEmail == '' || phoneNumber == '' || password == '' || passwordConfirmation == '')
-            errorMessage = errorMessage.concat("Some fields were left blank. ")
+            errorMessage = errorMessage.concat("*Some fields were left blank. ")
         if (password != passwordConfirmation)
-            errorMessage = errorMessage.concat("Passwords do not match. ")
+            errorMessage = errorMessage.concat("*Passwords do not match. ")
         if (schoolEmail != '' && !this.validateEmail(preferredEmail))
-            errorMessage = errorMessage.concat("Preferred email is not in correct format. ")
+            errorMessage = errorMessage.concat("*Preferred email is not in correct format. ")
         if (schoolEmail != '' && !this.validateEmail(schoolEmail))
-            errorMessage = errorMessage.concat("School email is not in correct format. ")
+            errorMessage = errorMessage.concat("*School email is not in correct format. ")
         if (phoneNumber != '' && !this.validatePhoneNumber(phoneNumber))
-            errorMessage = errorMessage.concat("Phone number is not in correct format. ")
+            errorMessage = errorMessage.concat("*Phone number is not in correct format. ")
 
         console.log(errorMessage)
         this.setState({
