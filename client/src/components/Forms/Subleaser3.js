@@ -158,10 +158,11 @@ class Subleaser3 extends React.Component {
                             <Button variant="outline-info" size="sm" onClick={this.nextPage}> Next </Button>
                         </div>
                     </div>
-                </Form>
-                <div>
-                    {error}
-                </div>
+
+                    <div class="error_msg">
+                            {error}
+                        </div>
+                    </Form>
             </div >
         )
     };

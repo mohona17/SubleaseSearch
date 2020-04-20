@@ -100,17 +100,17 @@ class Subleaser1 extends React.Component {
                             ></Form.Control><br />
                         </Form.Group>
 
-                        <Form.Group controlId="layout">
-                            <h5>Layout</h5>
-                            <Form.Control input
-                            /*type="number"
+                        {/* <Form.Group controlId="layout"> */}
+                            <h4>Layout</h4>
+                            {/* <Form.Control input
+                            type="number"
                             placeholder="#"
                             min="0"
                             step="1"
                             value={layout}
-                            onChange={this.onTextboxChangeLayout}*/
+                            onChange={this.onTextboxChangeLayout}
                             ></Form.Control><br />
-                        </Form.Group>
+                        </Form.Group> */}
 
                         <Form.Group controlId="beds">
                             <h5># Beds</h5>
