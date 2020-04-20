@@ -51,7 +51,8 @@ class RentalTerm extends React.Component {
 
     }
 
-    nextPage = () => {
+    nextPage = (e) => {
+        e.preventDefault();
         const {
             startDate,
             endDate,
@@ -62,10 +63,10 @@ class RentalTerm extends React.Component {
         //TODO check if end date > start date and if both are after today's date
         var errorMessage = [];
         if (startDate == "yyyy-MM-dd" || endDate == "yyyy-MM-dd")
-            errorMessage = errorMessage.concat("Some dates were not filled in");
+            errorMessage = errorMessage.concat("*Some dates were not filled in");
 
         else if (!this.validateDates(startDate, endDate))
-            errorMessage = errorMessage.concat("Invalid dates");
+            errorMessage = errorMessage.concat("*Invalid dates");
         console.log(errorMessage)
         this.setState({
             error: errorMessage

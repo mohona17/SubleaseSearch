@@ -2,6 +2,21 @@
     text-align: center;
 }
 
+.App h2 {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.App h1 {
+    font-weight: 800;
+    font-size: 150px;
+    font-style: italic;
+}
+
+.App h4 {
+    font-weight: 100;
+}
+
 .App-logo {
     height: 40vmin;
 }
@@ -32,14 +47,17 @@
 
 .rent_btn {
     background: #72A2C2;
+    width: 350px;
 }
 
 .temp_btn {
-    background: #82E0AA
+    background: #82E0AA;
+    width: 350px;
 }
 
 .return_btn {
     color: #D7DBDD;
+    padding-top: 10px;
 }
 
 a {

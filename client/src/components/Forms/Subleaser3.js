@@ -76,7 +76,8 @@ class Subleaser3 extends React.Component {
             });
         }
     }
-    nextPage = () => {
+    nextPage = (e) => {
+        e.preventDefault();
         const {
             genderFemale,
             genderMale,
@@ -88,7 +89,7 @@ class Subleaser3 extends React.Component {
         var errorMessage = [];
 
         if (genderFemale && genderMale)
-            errorMessage = errorMessage.concat("Make sure to only choose one gender");
+            errorMessage = errorMessage.concat("*Make sure to only choose one gender");
 
         console.log(errorMessage)
         this.setState({
@@ -154,15 +155,16 @@ class Subleaser3 extends React.Component {
                         {preferenceForm}
 
                         <div class="buttons">
-                            <Button variant="outline-info" size="sm" onClick={this.props.back}> Back </Button>
-                            <Button variant="outline-info" size="sm" onClick={this.nextPage}> Next </Button>
+                            <button class="back_btn" onClick={this.props.back}> Back </button>
+                            <button class="back_btn" onClick={this.nextPage}> Next </button>
                         </div>
                     </div>
 
                     <div class="error_msg">
-                            {error}
-                        </div>
-                    </Form>
+                        {error}
+                    </div>
+                </Form>
+
             </div >
         )
     };

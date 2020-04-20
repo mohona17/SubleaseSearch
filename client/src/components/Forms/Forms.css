@@ -51,4 +51,5 @@ a {
 }
 .error_msg {
     color: red;
+    text-align: center;
 }

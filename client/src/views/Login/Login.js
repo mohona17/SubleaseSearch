@@ -45,6 +45,7 @@ class General extends React.Component {
                         <h2>Login</h2>
                         <hr></hr>
 
+                        <Form.Label><h5>Email</h5></Form.Label>
                         <Form.Control input
                             type="email"
                             placeholder="Email"
