@@ -2,16 +2,18 @@ import React from 'react';
 import logo from '../../assets/logo.svg';
 import './Home.css';
 import { Button } from 'react-bootstrap';
+import welcome from './welcometo.png'
 
 function Home() {
     return (
         <div className="App">
             <header className="App-header">
-                <h2>Welcome to</h2>
-                <h1>SUBLIST</h1>
+                <img class="welcomeImage" src={welcome} alt={"logo"}></img>
+                <br></br>
                 <h4>
                     I am looking to
                 </h4>
+                <br></br>
                 <button class="rent_btn"><a href="/Subleaser">
                     Rent out my apartment
                 </a></button>
@@ -22,7 +24,6 @@ function Home() {
                         Find a temporary apartment
                 </a>
                 </button>
-                <br />
 
                 <div class="return_btn">
                     <a href="/Login">

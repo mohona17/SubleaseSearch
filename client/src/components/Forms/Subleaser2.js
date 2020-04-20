@@ -62,7 +62,8 @@ class Subleaser2 extends React.Component {
         });
     }
 
-    nextPage = () => {
+    nextPage = (e) => {
+        e.preventDefault();
         const {
             furnished,
             utilities,
@@ -75,7 +76,7 @@ class Subleaser2 extends React.Component {
 
         console.log(roommates)
         if (roommates == null)
-            errorMessage = errorMessage.concat("Make sure all fields are complete");
+            errorMessage = errorMessage.concat("*Make sure all fields are complete");
 
         console.log(errorMessage)
         this.setState({
