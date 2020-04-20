@@ -2,10 +2,9 @@ import React from 'react';
 import logo from '../../assets/logo.svg';
 import './Profile.css';
 import MyListings from '../Listings/MyListings'
-import Messages from '../Messages/Messages'
-// import MyFavorites from '../MyFavorites/MyFavorites';
-
-
+import Messages from '../../components/Messages/Chat'
+import MyFavorites from '../MyFavorites/MyFavorites';
+import Header from '../../components/Header/Header'
 
 class Profile extends React.Component {
     constructor(props) {
@@ -16,6 +15,7 @@ class Profile extends React.Component {
 
         return (
             <div>
+                <Header></Header>
                 <h1>My Profile</h1>
                 <div class="row justify-content-md-center">
                     <div class="col col-sm-2 text-center">
@@ -25,17 +25,6 @@ class Profile extends React.Component {
                         <h3>Jane Doe</h3>
                         <h5>jdoe@ufl.edu</h5>
                         <h5>(555)-555-5555</h5>
-                    </div>
-                    <div class="col col-sm-6 text-center">
-                        <MyListings></MyListings>
-                    </div>
-                </div>
-                <div class="row justify-content-md-center">
-                    <div class="col col-sm-4 text-center">
-                        {/* <MyFavorites></MyFavorites> */}
-                    </div>
-                    <div class="col col-sm-4 text-center">
-                        {/* <Messages></Messages> */}
                     </div>
                 </div>
             </div>

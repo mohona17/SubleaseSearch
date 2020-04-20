@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../assets/logo.svg';
 import './MyFavorites.css';
+import Header from '../../components/Header/Header'
 
 class MyFavorites extends React.Component {
     constructor(props) {
@@ -10,7 +11,10 @@ class MyFavorites extends React.Component {
     render() {
 
         return (
-            <h1>My Favorites</h1>
+            <div>
+                <Header></Header>
+                <h1>My Favorites</h1>
+            </div>
         )
     };
 }
