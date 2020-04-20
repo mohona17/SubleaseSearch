@@ -7,7 +7,7 @@ import Griddle from 'griddle-react';
 import { connect } from 'react-redux';
 import { plugins } from 'griddle-react';
 import PropTypes from 'prop-types';
-
+import Header from '../../components/Header/Header'
 
 
 
@@ -96,6 +96,7 @@ class Listings extends React.Component {
     render() {        
         return (
             <div>
+              <Header></Header>
                 Sort by complex: 
                 <Griddle
                 data={data}

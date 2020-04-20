@@ -1,21 +1,22 @@
 import React from 'react';
-import './Listings.css';
+import logo from '../../assets/logo.svg';
+import './MyFavorites.css';
 import Header from '../../components/Header/Header'
 
-class MyListings extends React.Component {
+class MyFavorites extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
     render() {
+
         return (
             <div>
                 <Header></Header>
-                My listings go here
+                <h1>My Favorites</h1>
             </div>
         )
     };
 }
 
-export default MyListings;
+export default MyFavorites;
