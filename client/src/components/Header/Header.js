@@ -1,29 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import logo from './logo.png';
 
 const Header = () => {
     return (
         <div className='topnav'>
-            {/* Logo */}
-            <Link id="logo-link" to="/">
-                <img className="topnav-logo" src={ "/logo192.png" } alt="React logo" />
-            </Link>
-
-            {/* Page Links */}
-            <div className="topnav-right">
-                <Link className="topnav-link" to='/Register'>Sign in</Link>
-                <Link className="topnav-link" to='/projects'>Projects</Link>
-                <a className="topnav-link" target='_blank' rel="noopener noreferrer" href="https://www.facebook.com/groups/ufosc/events/?source=4&action_history=null&filter=calendar">
-                    Events
-                    <i className="fas fa-external-link-alt external-link" data-fa-transform="up-6"></i>
-                </a>
-                <a className="topnav-link" target='_blank' rel="noopener noreferrer" href="https://github.com/ufosc/club-resources">
-                    Resources
-                    <i className="fas fa-external-link-alt external-link" data-fa-transform="up-6 right-4"></i>
-                </a>
-                <Link className="topnav-link" to="/about">About</Link>
-            </div>
+            <nav class="navbar navbar-dark bg-success">
+                <img class="image" src={logo} alt={"logo"}></img>
+                <a class="navbar-brand" href="/Profile">Profile</a>
+                <a class="navbar-brand" href="/Listings">Listings</a>
+                <a class="navbar-brand" href="/MyFavorites">Favorites</a>
+                <a class="navbar-brand" href="/Messages">Messages</a>
+            </nav>
         </div>
     )
 }

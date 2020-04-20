@@ -124,15 +124,15 @@ class Subtenant1 extends React.Component {
                             onChange={this.onTextboxChangeMilesHigh}
                         ></Form.Control><br />
 
-                        <h5>Layout</h5>
-                        <Form.Control input
-                        /*type="number"
+                        <h4>Layout</h4>
+                        {/* <Form.Control input
+                        type="number"
                         placeholder="#"
                         min="0"
                         step="1"
                         value={beds}
-                        onChange={this.onTextboxChangeBeds}*/
-                        ></Form.Control><br />
+                        onChange={this.onTextboxChangeBeds}
+                        ></Form.Control><br /> */}
 
                         <h5># Beds</h5>
                         <Form.Control input

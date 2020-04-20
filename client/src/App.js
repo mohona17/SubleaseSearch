@@ -7,9 +7,10 @@ import SubtenantForm from "./views/Form/SubtenantForm"
 import SubleaserForm from "./views/Form/SubleaserForm"
 import Listings from "./views/Listings/Listings"
 import Messages from "./components/Messages/Chat"
-
 import MyListings from "./views/Listings/MyListings"
 import Login from "./views/Login/Login"
+import Profile from "./views/Profile/Profile"
+import MyFavorites from "./views/MyFavorites/MyFavorites"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -27,6 +28,8 @@ const App = () => {
         <Route exact path="/MyListings" component={MyListings} />
         <Route exact path="/Messages" component={Messages} />
         <Route exact path="/Login" component={Login} />
+        <Route exact path="/Profile" component={Profile} />
+        <Route exact path="/MyFavorites" component={MyFavorites} /> 
         <Route component={NotFound} />
       </Switch>
     </div>
