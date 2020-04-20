@@ -1,6 +1,6 @@
 import React from 'react';
 import './Listings.css';
-import Header from '../../components/Header/HeaderSubtenant'
+import Header from '../../components/Header/Header'
 
 class Listings extends React.Component {
     constructor(props) {

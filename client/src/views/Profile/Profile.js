@@ -4,7 +4,7 @@ import './Profile.css';
 import MyListings from '../Listings/MyListings'
 import Messages from '../../components/Messages/Chat'
 import MyFavorites from '../MyFavorites/MyFavorites';
-import HeaderSubtenant from '../../components/Header/HeaderSubtenant'
+import Header from '../../components/Header/Header'
 
 class Profile extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class Profile extends React.Component {
 
         return (
             <div>
-                <HeaderSubtenant></HeaderSubtenant>
+                <Header></Header>
                 <h1>My Profile</h1>
                 <div class="row justify-content-md-center">
                     <div class="col col-sm-2 text-center">

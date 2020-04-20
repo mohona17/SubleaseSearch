@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/logo.svg';
 import './MyFavorites.css';
-import Header from '../../components/Header/HeaderSubtenant'
+import Header from '../../components/Header/Header'
 
 class MyFavorites extends React.Component {
     constructor(props) {
