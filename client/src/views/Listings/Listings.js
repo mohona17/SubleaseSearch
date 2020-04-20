@@ -74,7 +74,7 @@ let urls = [
   }))(({ rowData }) => (
     <div style={{
       backgroundColor: "#DDF5E7",
-      border: "1px solid #777",
+      border: "0px solid #777",
       padding: 5,
       margin: 10,
     }}>

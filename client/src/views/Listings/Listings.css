@@ -43,13 +43,10 @@ h2 {
     width: 350px;
 }
 
-.favd_btn{
-
-}
 
 .rent_btn:hover {
     background-color: #72A2C2;
-    color:rgb(202, 46, 67);
+    color:white;
     
 
 }
