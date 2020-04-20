@@ -6,6 +6,8 @@ This project has moved maintainers and is no longer developed here. The up to da
 #### npm add ws
 #### npm install react-bootstrap bootstrap
 #### npm install --save react-images-upload
+#### npm install --save griddle-react
+
 
 #### _**IMPORTANT NOTE**_ - 
 This project does not have a mongoDB connection setup. Setup the connection based on the environments below.
