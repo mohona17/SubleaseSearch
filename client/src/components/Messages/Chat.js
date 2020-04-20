@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ChatInput from './ChatInput'
 import ChatMessage from './ChatMessage'
+import Header from '../../components/Header/Header'
 
 const URL = 'ws://localhost:3030'
 
@@ -46,7 +47,9 @@ class Chat extends Component {
   render() {
     return (
       <div>
-        <label htmlFor="name">
+         <Header></Header>
+         <div class= "leftColumn">
+        <label>
           Name:&nbsp;
           <input
             type="text"
@@ -56,10 +59,7 @@ class Chat extends Component {
             onChange={e => this.setState({ name: e.target.value })}
           />
         </label>
-        <ChatInput
-          ws={this.ws}
-          onSubmitMessage={messageString => this.submitMessage(messageString)}
-        />
+        </div>
         {this.state.messages.map((message, index) =>
           <ChatMessage
             key={index}
@@ -67,6 +67,11 @@ class Chat extends Component {
             name={message.name}
           />,
         )}
+
+          <ChatInput
+          ws={this.ws}
+          onSubmitMessage={messageString => this.submitMessage(messageString)}
+        />
       </div>
     )
   }
