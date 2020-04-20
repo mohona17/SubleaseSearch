@@ -60,7 +60,7 @@ class General extends React.Component {
                             onChange={this.onTextboxChangePassword}
                         ></Form.Control><br />
 
-                        <button class="login"> <a href="/Listings"> Login (now goes to /Listings) </a> </button>
+                        <button class="login"> <a href="/Profile"> Login </a> </button>
                     </div>
                 </Form>
 
