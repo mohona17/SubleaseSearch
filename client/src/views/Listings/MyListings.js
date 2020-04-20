@@ -1,8 +1,8 @@
 import React from 'react';
 import './Listings.css';
-import Header from '../../components/Header/Header'
+import Header from '../../components/Header/HeaderSubleaser'
 
-class Listings extends React.Component {
+class MyListings extends React.Component {
     constructor(props) {
         super(props);
 
@@ -18,4 +18,4 @@ class Listings extends React.Component {
     };
 }
 
-export default Listings;
+export default MyListings;

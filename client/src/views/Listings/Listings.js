@@ -1,5 +1,6 @@
 import React from 'react';
 import './Listings.css';
+import Header from '../../components/Header/HeaderSubtenant'
 
 class Listings extends React.Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class Listings extends React.Component {
     render() {        
         return (
             <div>
+                <Header></Header>
                 Listings go here
             </div>
         )
