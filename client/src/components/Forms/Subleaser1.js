@@ -102,7 +102,6 @@ class Subleaser1 extends React.Component {
                         </Form.Group>
 
                         <h4>Layout</h4>
-
                         <Form.Group controlId="beds">
                             <h5># Beds</h5>
                             <Form.Control input

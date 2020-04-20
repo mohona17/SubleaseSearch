@@ -69,7 +69,8 @@ class Subleaser4 extends React.Component {
         } = this.state;
 
         var filesUploadedLabel = "You have uploaded: ";
-        if (pictures.length == 0) filesUploadedLabel = "*You have not uploaded any files";
+
+      if (pictures.length == 0) filesUploadedLabel = "*You have not uploaded any files";
 
         return (
             < div >
