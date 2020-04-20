@@ -83,6 +83,7 @@ class Subleaser4 extends React.Component {
                             onChange={this.addPic}
                             imgExtension={['.jpg','.png']}
                             maxFileSize={5242880}
+                            label='Max file size: 5mb, accepted: jpg and png'
                         />
                         {filesUploadedLabel}
                         {pictureNames}
