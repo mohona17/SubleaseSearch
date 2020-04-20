@@ -81,7 +81,7 @@ class Subleaser4 extends React.Component {
                             withIcon={true}
                             buttonText='Choose images of your lease!'
                             onChange={this.addPic}
-                            imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                            imgExtension={['.jpg','.png']}
                             maxFileSize={5242880}
                         />
                         {filesUploadedLabel}
