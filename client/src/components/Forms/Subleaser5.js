@@ -24,7 +24,7 @@ class Subleaser5 extends React.Component {
                             <Button variant="outline-info" size="sm" onClick={this.props.back}> Back </Button>
                             <Button variant="outline-info" size="sm">
                                 <a href="/MyListings">
-                                    Listings
+                                    My Listings
                                     </a>
                             </Button>
                         </div>
