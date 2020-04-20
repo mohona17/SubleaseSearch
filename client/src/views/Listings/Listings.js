@@ -45,6 +45,13 @@ let urls = [
         "bathrooms": "2",
         "pets": "No",
         "image": "https://www.rentgainesvilleapartments.com/wp-content/uploads/2013/12/Courtyard-Apartments-Dining-Room-08.jpg"
+      },
+      {
+        "complex": "Lux 13",
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "pets": "No",
+        "image": "https://d1d20t9fkd7io6.cloudfront.net/9f8d85d76ed18ca5fa3c58aa9f885bbb/670x475xcrop_middle/95/https/www.collegerentals.com/csa/r=104/jpg/media/com_iproperty/pictures/Gainesville-10-Lux-13-Community-1-768x5125b6da7f40e5a8.jpg"
       }
       
   ];
@@ -65,6 +72,8 @@ let urls = [
       <li><strong>Bedrooms</strong>: {rowData.bedrooms}</li>
       <li><strong>Bathrooms</strong>: {rowData.bathrooms}</li>
       <li><strong>Pets Allowed</strong>: {rowData.pets}</li>
+      <button class="Contact Lister"> <a href="/Messages"> Contact Lister (direct to messages)</a> </button>
+      <button class="Add to Favorites"> Add to Favorites </button>
       </ul>
     </div>
   ));
@@ -108,7 +117,7 @@ class Listings extends React.Component {
                 <Griddle
                 data={data}
                 pageProperties={{
-                pageSize: 5
+                pageSize: 2
                 }}
                 plugins={[plugins.LocalPlugin]}
                 components={{
