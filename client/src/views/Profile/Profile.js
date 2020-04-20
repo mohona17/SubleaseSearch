@@ -35,7 +35,7 @@ class Profile extends React.Component {
                         {/* <MyFavorites></MyFavorites> */}
                     </div>
                     <div class="col col-sm-4 text-center">
-                        <Messages></Messages>
+                        {/* <Messages></Messages> */}
                     </div>
                 </div>
             </div>
