@@ -1,4 +1,17 @@
+.topnav img{
+    max-height: 20%;
+    max-width: 20%;
+    
+}
 
+.topnav{
+    background-color:#39c1ac;
+    color: white;
+}
+.navbar-brand:hover {
+    background: #91c64b;
+
+}
 #wrapper {
     display: grid;
     max-width: 1000px;
