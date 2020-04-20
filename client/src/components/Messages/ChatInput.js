@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import "./Messages.css"
 
 class ChatInput extends Component {
   static propTypes = {
@@ -21,6 +22,7 @@ class ChatInput extends Component {
       >
         <input
           type="text"
+          class = "messageBox"
           placeholder={'Enter message...'}
           value={this.state.message}
           onChange={e => this.setState({ message: e.target.value })}
