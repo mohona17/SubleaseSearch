@@ -69,3 +69,7 @@ a:hover {
     color: transparent;
     text-decoration: none;
 }
+
+.welcomeImage {
+    height: 12rem;
+}

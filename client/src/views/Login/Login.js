@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
 import './Login.css';
 import { Button, Form, Col, InputGroup } from 'react-bootstrap';
+import logo from './logo.png'
 
 
 class General extends React.Component {
@@ -39,6 +39,9 @@ class General extends React.Component {
             <div>
                 <Form>
                     <div class="forms">
+                        <div class="wrapper">
+                            <img class="logo" src={logo} alt={"logo"}></img>
+                        </div>
                         <h2>Login</h2>
                         <hr></hr>
 
@@ -58,9 +61,7 @@ class General extends React.Component {
                             onChange={this.onTextboxChangePassword}
                         ></Form.Control><br />
 
-                        <div class="buttons">
-                            <button class="login"> <a href="/Listings"> Login (now goes to /Listings) </a> </button>
-                        </div>
+                        <button class="login"> <a href="/Profile"> Login </a> </button>
                     </div>
                 </Form>
 
