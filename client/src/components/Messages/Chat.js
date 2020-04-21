@@ -7,7 +7,7 @@ const URL = 'ws://localhost:3030'
 
 class Chat extends Component {
   state = {
-    name: 'Bob',
+    name: 'Joe',
     messages: [],
   }
 
@@ -35,7 +35,8 @@ class Chat extends Component {
   }
 
   addMessage = message =>
-    this.setState(state => ({ messages: [message, ...state.messages] }))
+  //this.setState(state => ({ messages: [message, ...state.messages] }))
+   this.setState(state => ({ messages: [...state.messages, message] }))
 
   submitMessage = messageString => {
     // on submitting the ChatInput form, send the message, add it to the list and reset the input
@@ -48,18 +49,27 @@ class Chat extends Component {
     return (
       <div>
          <Header></Header>
+      
          <div class= "leftColumn">
-        <label>
-          Name:&nbsp;
-          <input
-            type="text"
-            id={'name'}
-            placeholder={'Enter your name...'}
-            value={this.state.name}
-            onChange={e => this.setState({ name: e.target.value })}
-          />
-        </label>
+        <p >
+          {/* Name:&nbsp; */}
+          <div class = "pastMessages">
+          <strong>Joey</strong> <br />
+          <em>Hi! I am interested in your listing</em>
+          </div>
+          <div class = "pastMessages">
+          <strong>George</strong> <br />
+          <em>Hello, I am interested in your listing</em>
+          </div>
+          <div class = "pastMessages">
+          <strong>Henry</strong> <br />
+          <em>Hi! I am interested in your listing</em>
+          </div>
+        </p>
         </div>
+        
+        <div class="rightColumn">
+        <div class = "incomingMessages">
         {this.state.messages.map((message, index) =>
           <ChatMessage
             key={index}
@@ -67,11 +77,12 @@ class Chat extends Component {
             name={message.name}
           />,
         )}
-
+        </div>
           <ChatInput
           ws={this.ws}
           onSubmitMessage={messageString => this.submitMessage(messageString)}
         />
+        </div>
       </div>
     )
   }
