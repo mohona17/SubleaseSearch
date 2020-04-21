@@ -1,9 +1,38 @@
 .messageBox {
-    float: bottom;
-    margin-top: -50px;
+    position: fixed;
+    bottom: 30px;
+
 }
 
+.incomingMessages {
+   position:fixed;
+   bottom: 50px;
+
+}
 .leftColumn {
-    width: 200px;
-    float: left;
+    position: fixed;
+    border-right: 3px solid #39c1ac;
+    height: 100%;
+    left: 5%;
+    margin-left: -3px;
+    padding-top: 40 px;
+    top: 20;
+}
+
+.pastMessages {
+    border-bottom: 2px solid #39c1ac;
+    width: 150%;
+    transform: translateX(-20%)
+}
+
+.rightColumn{
+    position: fixed;
+    margin-left: 50%;
+    margin-right: -25px;
+    right: 50%;
+    z-index: -1;
+}
+
+.chatForm {
+    position: center;
 }

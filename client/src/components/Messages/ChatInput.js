@@ -12,7 +12,9 @@ class ChatInput extends Component {
 
   render() {
     return (
+
       <form
+        class = "chatForm"
         action="."
         onSubmit={e => {
           e.preventDefault()
@@ -20,15 +22,17 @@ class ChatInput extends Component {
           this.setState({ message: '' })
         }}
       >
+       <div class= "messageBox">
         <input
           type="text"
-          class = "messageBox"
           placeholder={'Enter message...'}
           value={this.state.message}
           onChange={e => this.setState({ message: e.target.value })}
         />
-        <input type="submit" value={'Send'} />
+        <input class="sendButton" type="submit" value={'Send'} />
+        </div>
       </form>
+
     )
   }
 }
