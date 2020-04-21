@@ -1,0 +1,57 @@
+.cont{
+    text-align: center;
+}
+
+.button {
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+
+
+h1{
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 100!important;
+}
+
+h2 {
+    
+    /*width: min-content;*/
+    text-align: justify;
+    font-size: 20px!important;
+    font-weight: 100!important;
+  }
+
+
+.rent_btn,
+.temp_btn {
+    transition-duration: 0.4s;
+    color: white;
+    border-radius: 30px;
+    padding: 10px;
+    border: 0;
+    font-weight: 100;
+    font-size: 20px;
+    width: 350px;
+}
+
+
+.rent_btn:hover {
+    background-color: #72A2C2;
+    color:white;
+    
+
+}
+
+.temp_btn:hover {
+    background-color: #4b9d7f;
+    color: white;
+}
