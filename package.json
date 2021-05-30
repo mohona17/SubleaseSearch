@@ -38,7 +38,7 @@
     "should": "^13.2.3",
     "supertest": "^4.0.2",
     "validator": "^13.0.0",
-    "ws": "^7.2.3"
+    "ws": "^7.4.6"
   },
   "homepage": "https://github.com/UFWebApps/React_Template_Repo#readme"
 }
