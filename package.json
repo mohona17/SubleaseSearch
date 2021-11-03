@@ -37,7 +37,7 @@
     "react-websocket": "^2.1.0",
     "should": "^13.2.3",
     "supertest": "^4.0.2",
-    "validator": "^13.0.0",
+    "validator": "^13.7.0",
     "ws": "^7.2.3"
   },
   "homepage": "https://github.com/UFWebApps/React_Template_Repo#readme"
